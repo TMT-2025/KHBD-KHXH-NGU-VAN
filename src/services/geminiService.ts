@@ -134,13 +134,15 @@ export async function integrateNLS(content: string, subject: string, grade: stri
          a) Mục tiêu: Xác định rõ yêu cầu kiến thức/kỹ năng cần đạt của hoạt động đó.
          b) Nội dung: Giao nhiệm vụ, câu hỏi, bài tập cụ thể, nhiệm vụ học tập đầy đủ cho học sinh.
          c) Sản phẩm: Kết quả bài làm của học sinh (đáp án chi tiết, bảng biểu đã điền, ý kiến trả lời cụ thể, bài trình bày...), đảm bảo độ phân giải vật lý cao nhất của sản phẩm mẫu, tuyệt đối không viết chung chung đại khái.
-         d) Tổ chức thực hiện: Thiết kế bắt buộc dưới dạng bảng Markdown có cấu trúc 2 cột cụ thể như sau (điền các hành động chi tiết thực tế của giáo viên và học sinh tương ứng với môn học và hoạt động học thay vì viết chung chung):
-            | Bước | Nội dung |
-            | :--- | :--- |
-            | **1. Giao nhiệm vụ** | GV giao nhiệm vụ, nêu yêu cầu, thời gian, học liệu và hình thức làm việc. Nêu rõ cách giáo viên sử dụng bảng tương tác hoặc công cụ trực tuyến tương tác (Kahoot!, Quizizz, Padlet, Mentimeter...) để giao nhiệm vụ. |
-            | **2. Thực hiện nhiệm vụ** | HS thực hiện; GV quan sát, hỗ trợ, gợi mở, dự kiến khó khăn. [BẮT BUỘC Tích hợp NLS và AI: (Mã năng lực số NC1, mã hóa năng lực AI chi tiết như 10.A1b, 11.C2a, 12.D2b... HOÀN TOÀN bằng văn bản thường không dùng dấu nháy ngược, và mô tả cụ thể hoạt động tương tác)]. |
-            | **3. Báo cáo – thảo luận** | HS trình bày, trao đổi, phản biện; GV điều hành. Nêu rõ cách HS trình bày trực quan qua bảng tương tác hoặc phản hồi trên ứng dụng trực tuyến. |
-            | **4. Kết luận – nhận định** | GV nhận xét, đánh giá sản phẩm, chuẩn hóa kiến thức và chuyển sang hoạt động tiếp theo. |
+                   d) Tổ chức thực hiện: Thiết kế bắt buộc dưới dạng bảng Markdown có cấu trúc 2 cột cụ thể như sau (điền các hành động chi tiết thực tế của giáo viên và học sinh tương ứng với môn học và hoạt động học thay vì viết chung chung). 
+             * QUY TẮC BẮT BUỘC 1: Ngay trên đầu bảng "Tổ chức thực hiện" của mỗi hoạt động, phải ghi rõ phương pháp/kỹ thuật dạy học tích cực được áp dụng (ví dụ: Kỹ thuật KWL, Áp dụng Brainstorming, Think-Pair-Share, Khăn trải bàn, Mảnh ghép, Trạm xoay, PBL, Tranh luận, Bể cá...). Ví dụ: **[Phương pháp áp dụng: Khăn trải bàn & Trạm xoay]**.
+             * QUY TẮC BẮT BUỘC 2: Trong các bước Giao nhiệm vụ, Thực hiện nhiệm vụ, Báo cáo - thảo luận, phải ghi cụ thể hành động học sinh/giáo viên sử dụng bảng tương tác (Smart Board) và các ứng dụng trực tuyến như Kahoot!, Quizizz, Blooket, Padlet, Mentimeter... để thực hành/báo cáo sản phẩm.
+             | Bước | Nội dung |
+             | :--- | :--- |
+             | **1. Giao nhiệm vụ** | GV giao nhiệm vụ học tập rõ ràng, nêu yêu cầu, thời gian, học liệu số và hình thức làm việc. Nêu rõ cách GV sử dụng bảng tương tác hoặc các công cụ trực tuyến (Kahoot!, Quizizz, Blooket, Padlet, Mentimeter...) để khởi động hoặc giao câu hỏi/nhiệm vụ. |
+             | **2. Thực hiện nhiệm vụ** | HS thực hiện nhiệm vụ (cá nhân/cặp/nhóm); GV theo dõi, hỗ trợ. [BẮT BUỘC Tích hợp NLS và AI: Mô tả HS dùng công cụ số/AI (như tra cứu dữ liệu, tương tác prompt, kiểm chứng thông tin) với mã năng lực số NC1 và mã AI chi tiết (10.A1b, 11.C2a, 12.D2b...) viết dưới dạng văn bản thường không chứa dấu nháy ngược]. |
+             | **3. Báo cáo – thảo luận** | HS báo cáo kết quả thông qua các sản phẩm số, phản hồi/trình bày trực tiếp trên bảng tương tác hoặc qua ứng dụng trực tuyến (như đăng sản phẩm lên Padlet, trả lời trên Mentimeter, thảo luận nhóm qua bảng thông minh); HS nhóm khác phản biện, thảo luận; GV điều hành. |
+             | **4. Kết luận – nhận định** | GV nhận xét, đánh giá tinh thần làm việc và sản phẩm của học sinh, chuẩn hóa kiến thức cốt lõi và chuyển giao nhiệm vụ tiếp theo. |
         - QUY TẮC BẮT BUỘC TRONG BẢNG: Trong cột "Nội dung" của bảng "Tổ chức thực hiện" (ở bước d của tất cả các hoạt động), sau mỗi câu hoặc sau mỗi ý hành động lớn của Giáo viên hoặc Học sinh, bạn PHẢI tự động xuống hàng bằng cách chèn thẻ <br> ở cuối để phân tách rõ ràng các ý, giúp giáo viên dễ đọc. Tuyệt đối không viết liền tù tì thành một đoạn dài.
        - Thể hiện rõ các PHƯƠNG PHÁP và KỸ THUẬT DẠY HỌC TÍCH CỰC lồng ghép năng lực số (Kỹ thuật KWL, Áp dụng Brainstorming, Think-Pair-Share, Khăn trải bàn, Mảnh ghép, Trạm xoay, PBL - Học theo vấn đề, Tranh luận chuyên sâu, Bể cá (Fishbowl)... nhằm tối ưu hóa sự tương tác và hào hứng trong giờ học).
        - Thiết kế để dạy học tối ưu trên BẢNG TƯƠNG TÁC bằng việc lồng ghép thông minh các CÔNG CỤ TRỰC TUYẾN tương tác cao: Kahoot!, Quizizz, Blooket, Padlet, Mentimeter, v.v., khai thác tối đa tính năng tương tác của bảng thông minh có tại trường.
@@ -251,13 +253,15 @@ export async function generateLessonPlan(lessonName: string, periods: number, su
       a) Mục tiêu: Mô tả rõ ràng kiến thức, kỹ năng, năng lực cần đạt được trong hoạt động này.
       b) Nội dung: Giao nhiệm vụ, câu hỏi, bài tập cụ thể, kịch bản hành động chi tiết đầy đủ cho học sinh (ghi rõ nội dung câu hỏi/nhiệm vụ trong phiếu học tập).
       c) Sản phẩm: Ghi rõ ĐÁP ÁN CHI TIẾT, kết quả tính toán cụ thể, các nội dung điền khuyết trên bảng biểu, câu trả lời mẫu đầy đủ nhất của học sinh (đảm bảo độ phủ chuyên môn cao, không viết mơ hồ "Học sinh hiểu bài" hay "Trả lời câu hỏi").
-      d) Tổ chức thực hiện: Thiết kế bắt buộc dưới dạng bảng Markdown có cấu trúc 2 cột cực kỳ chuyên nghiệp và cụ thể như sau (không ghi chung chung mô tả gốc mà phải điền các kịch bản hành động chi tiết tương ứng với học liệu, tiến trình bài học):
-         | Bước | Nội dung |
-         | :--- | :--- |
-         | **1. Giao nhiệm vụ** | GV giao nhiệm vụ, nêu yêu cầu, thời gian, học liệu và hình thức làm việc. Nêu cách giáo viên sử dụng bảng tương tác hoặc công cụ trực tuyến tương tác (Kahoot!, Quizizz, Padlet, Mentimeter...) để giao nhiệm vụ. |
-         | **2. Thực hiện nhiệm vụ** | HS thực hiện; GV quan sát, hỗ trợ, gợi mở, dự kiến khó khăn. [BẮT BUỘC Tích hợp NLS và AI: (Mã năng lực số NC1, mã hóa năng lực AI chi tiết như 10.A1b, 11.C2a, 12.D2b... HOÀN TOÀN bằng văn bản thường không dùng dấu nháy ngược, và mô tả cụ thể hoạt động tương tác)]. |
-         | **3. Báo cáo – thảo luận** | HS trình bày, trao đổi, phản biện; GV điều hành. Nêu rõ cách HS trình bày trực quan qua bảng tương tác hoặc phản hồi trên ứng dụng trực tuyến. |
-         | **4. Kết luận – nhận định** | GV nhận xét, đánh giá sản phẩm, chuẩn hóa kiến thức và chuyển sang hoạt động tiếp theo (chuẩn hóa các định luật, công thức hóa/vật lí... nếu có). |
+                d) Tổ chức thực hiện: Thiết kế bắt buộc dưới dạng bảng Markdown có cấu trúc 2 cột cực kỳ chuyên nghiệp và cụ thể như sau (không ghi chung chung mô tả gốc mà phải điền các kịch bản hành động chi tiết tương ứng với học liệu, tiến trình bài học).
+             * QUY TẮC BẮT BUỘC 1: Ngay trên đầu bảng "Tổ chức thực hiện" của mỗi hoạt động, phải ghi rõ phương pháp/kỹ thuật dạy học tích cực được áp dụng (Kỹ thuật KWL, Brainstorming, Think-Pair-Share, Khăn trải bàn, Mảnh ghép, Trạm xoay, PBL, Tranh luận, Bể cá...). Ví dụ: **[Phương pháp áp dụng: Khăn trải bàn & Trạm xoay]**.
+             * QUY TẮC BẮT BUỘC 2: Trong các bước Giao nhiệm vụ, Thực hiện nhiệm vụ, Báo cáo - thảo luận, phải ghi cụ thể hành động học sinh/giáo viên sử dụng bảng tương tác (Smart Board) và các ứng dụng trực tuyến như Kahoot!, Quizizz, Blooket, Padlet, Mentimeter... để thực hành/báo cáo sản phẩm.
+             | Bước | Nội dung |
+             | :--- | :--- |
+             | **1. Giao nhiệm vụ** | GV giao nhiệm vụ học tập rõ ràng, nêu yêu cầu, thời gian, học liệu số và hình thức làm việc. Nêu cách GV sử dụng bảng tương tác hoặc các công cụ trực tuyến (Kahoot!, Quizizz, Blooket, Padlet, Mentimeter...) để khởi động hoặc giao nhiệm vụ học tập. |
+             | **2. Thực hiện nhiệm vụ** | HS thực hiện nhiệm vụ (cá nhân/cặp/nhóm); GV theo dõi, hỗ trợ. [BẮT BUỘC Tích hợp NLS và AI: Mô tả HS dùng công cụ số/AI (như tra cứu dữ liệu, tương tác prompt, kiểm chứng thông tin) với mã năng lực số NC1 và mã AI chi tiết (10.A1b, 11.C2a, 12.D2b...) viết dưới dạng văn bản thường không chứa dấu nháy ngược]. |
+             | **3. Báo cáo – thảo luận** | HS báo cáo kết quả thông qua các sản phẩm số, phản hồi/trình bày trực tiếp trên bảng tương tác hoặc qua ứng dụng trực tuyến (như đăng sản phẩm lên Padlet, trả lời trên Mentimeter, thảo luận nhóm qua bảng thông minh); HS nhóm khác phản biện, thảo luận; GV điều hành. |
+             | **4. Kết luận – nhận định** | GV nhận xét, đánh giá tinh thần làm việc và sản phẩm của học sinh, chuẩn hóa kiến thức cốt lõi và chuyển sang hoạt động học tiếp theo. |
         - QUY TẮC BẮT BUỘC TRONG BẢNG: Trong cột "Nội dung" của bảng "Tổ chức thực hiện" (ở bước d của tất cả các hoạt động), sau mỗi câu hoặc sau mỗi ý hành động lớn của Giáo viên hoặc Học sinh, bạn PHẢI tự động xuống hàng bằng cách chèn thẻ <br> ở cuối để phân tách rõ ràng các ý, giúp giáo viên dễ đọc. Tuyệt đối không viết liền tù tì thành một đoạn dài.
     
     IV. KẾ HOẠCH ĐÁNH GIÁ (nếu có)
