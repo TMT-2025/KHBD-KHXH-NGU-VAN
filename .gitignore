@@ -1,0 +1,18 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+
+# Large Reference Files & PDFs
+MON KHXH/
+
+# Temporary and backup files
+*.bak.tsx
+App.bak.tsx
+extracted_lessons.json
+history_lessons.json
+formatted_lessons.ts
