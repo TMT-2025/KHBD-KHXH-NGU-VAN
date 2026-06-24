@@ -16,3 +16,5 @@ App.bak.tsx
 extracted_lessons.json
 history_lessons.json
 formatted_lessons.ts
+
+.vercel

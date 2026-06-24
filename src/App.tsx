@@ -805,6 +805,8 @@ export default function App() {
   const [customPeriods, setCustomPeriods] = useState<number | null>(null);
 
   const effectivePeriods = customPeriods !== null ? customPeriods : periods;
+  const defaultPeriods = selectedLesson?.periods || 1;
+  const displayPeriods = Array.from(new Set([1, 2, 3, 4, 5, 6, defaultPeriods])).sort((a, b) => a - b);
 
   // Update selected lesson when grade or subject changes
   React.useEffect(() => {
@@ -1143,13 +1145,13 @@ export default function App() {
                   
                   <div className="mt-4">
                     <label className="block text-[11px] font-bold text-prof-slate-label mb-2 uppercase tracking-wider">Số tiết thực hiện</label>
-                    <div className="flex gap-2">
-                      {[1, 2, 3, 4, 5, 6].map((p) => (
+                    <div className="flex gap-2 flex-wrap">
+                      {displayPeriods.map((p) => (
                         <div
                           key={p}
                           className={cn(
-                            "flex-1 py-2 rounded-lg border-2 font-bold text-sm text-center select-none",
-                            periods === p 
+                            "px-3 py-2 rounded-lg border-2 font-bold text-sm text-center select-none min-w-[36px]",
+                            effectivePeriods === p 
                               ? "border-prof-blue-primary bg-prof-blue-primary text-white shadow-md" 
                               : "border-slate-200 bg-white text-slate-400 opacity-60"
                           )}
@@ -1162,14 +1164,14 @@ export default function App() {
 
                   <div className="mt-4">
                     <label className="block text-[11px] font-bold text-prof-slate-label mb-2 uppercase tracking-wider">Chọn lại số tiết</label>
-                    <div className="flex gap-2">
-                      {[1, 2, 3, 4, 5, 6].map((p) => (
+                    <div className="flex gap-2 flex-wrap">
+                      {displayPeriods.map((p) => (
                         <button
                           key={p}
                           type="button"
                           onClick={() => setCustomPeriods(customPeriods === p ? null : p)}
                           className={cn(
-                            "flex-1 py-2 rounded-lg border-2 transition-all font-bold text-sm cursor-pointer",
+                            "px-3 py-2 rounded-lg border-2 transition-all font-bold text-sm cursor-pointer min-w-[36px]",
                             customPeriods === p 
                               ? "border-prof-blue-primary bg-prof-blue-primary text-white shadow-md" 
                               : "border-slate-200 bg-white text-slate-500 hover:border-prof-blue-light"
