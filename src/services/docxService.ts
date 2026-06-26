@@ -849,7 +849,7 @@ export async function generateDocx(content: string, fileName: string, periods?: 
       const activityMatch = text.match(/^(\d+\.\s+)?(Hoạt động\s+(\d+))(.*)/i);
       const stepMatch = text.match(/^(?:[-•\s]*)([a-d]\)\s*(Mục tiêu|Nội dung|Sản phẩm|Tổ chức thực hiện):)\s*(.*)/i);
       const nlsTitleMatch = text.match(/^(3\.\s+Năng lực số:)\s*(.*)/i);
-      const orgStepMatch = text.match(/^(•\s*(?:\*\*)?)(Giao nhiệm vụ học tập|Gv giao nhiệm vụ cho học sinh|Gv giao nhiêm vụ cho học sinh|Thực hiện nhiệm vụ|Học sinh thực hiện nhiệm vụ|Báo cáo,\s*thảo luận|Học sinh báo cáo thực hiện kết quả|Kết luận,\s*nhận định|Nhận xét,\s*đánh giá kết quả thực hiện nhiệm vụ)((?:\*\*)?[:.]?)\s*(.*)/i);
+      const orgStepMatch = text.match(/^(•\s*(?:\*\*)?)(Giao nhiệm vụ học tập|Chuyển giao nhiệm vụ học tập|Gv giao nhiệm vụ cho học sinh|Gv giao nhiêm vụ cho học sinh|Thực hiện nhiệm vụ|Học sinh thực hiện nhiệm vụ|Báo cáo,\s*thảo luận|Báo cáo kết quả và thảo luận|Học sinh báo cáo thực hiện kết quả|Kết luận,\s*nhận định|Nhận xét,\s*đánh giá kết quả thực hiện nhiệm vụ)((?:\*\*)?[:.]?)\s*(.*)/i);
 
       if (activityMatch) {
         bold = true;
