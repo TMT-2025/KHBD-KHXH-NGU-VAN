@@ -641,7 +641,7 @@ export async function generateDocx(content: string, fileName: string, periods?: 
 
         let colWidth = 100 / cells.length;
         if (cells.length === 2) {
-          colWidth = cIdx === 0 ? 25 : 75;
+          colWidth = cIdx === 0 ? 45 : 55;
         }
 
         return new TableCell({

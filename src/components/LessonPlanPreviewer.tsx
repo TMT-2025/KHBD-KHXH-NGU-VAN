@@ -314,7 +314,7 @@ export default function LessonPlanPreviewer({
                         <Tag 
                           key={`td-${cIdx}`} 
                           className={`px-4 py-3 text-left text-xs ${isHeader ? "text-slate-700 font-bold tracking-wider" : "text-slate-600 font-serif"}`}
-                          style={cells.length === 2 ? { width: cIdx === 0 ? '25%' : '75%' } : undefined}
+                          style={cells.length === 2 ? { width: cIdx === 0 ? '45%' : '55%' } : undefined}
                         >
                           {cellLines.map((line, lIdx) => (
                             <div key={lIdx} className={lIdx > 0 ? "mt-2" : ""}>

@@ -7,7 +7,7 @@ import LessonPlanPreviewer from './components/LessonPlanPreviewer';
 import { cn } from './lib/utils';
 import { motion, AnimatePresence } from 'motion/react';
 
-const SUBJECTS = ['Ngữ văn', 'Lịch sử', 'Địa lí', 'Giáo dục Kinh tế và Pháp luật', 'Tiếng Anh'];
+const SUBJECTS = ['Ngữ văn'];
 const GRADES = ['Lớp 10', 'Lớp 11', 'Lớp 12'];
 
 
