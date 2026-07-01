@@ -164,9 +164,32 @@ export async function integrateNLS(content: string, subject: string, grade: stri
      1. ĐỐI VỚI TIẾNG ANH (LANGUAGE & STRUCTURES):
         - Các bảng từ vựng (Vocabulary), cấu trúc (Structures) phải rõ ràng, phân biệt rõ cột Từ/Cụm từ, Từ loại, Phiên âm, Nghĩa và Câu ví dụ.
         - Tích hợp các công cụ luyện phát âm AI (như Elsa Speak), chatbot AI đóng vai (role-play), hoặc công cụ sửa lỗi ngữ pháp.
-     2. ĐỐI VỚI NGỮ VĂN (LITERATURE & READING COMPREHENSION):
-        - Trích dẫn các đoạn thơ, đoạn văn mẫu hoặc ngữ liệu văn học rõ ràng, căn lề thụt lề chuẩn.
-        - Tích hợp AI trong việc phân tích cấu trúc văn bản, tóm tắt ý chính, nhận diện biện pháp nghệ thuật, hoặc tạo lập văn bản theo phong cách khác nhau.
+      2. ĐỐI VỚI NGỮ VĂN (LITERATURE & READING COMPREHENSION):
+         - Trích dẫn các đoạn thơ, đoạn văn mẫu hoặc ngữ liệu văn học rõ ràng, căn lề thụt lề chuẩn.
+         - Tích hợp AI trong việc phân tích cấu trúc văn bản, tóm tắt ý chính, nhận diện biện pháp nghệ thuật, hoặc tạo lập văn bản theo phong cách khác nhau.
+         - BẮT BUỘC CHO HOẠT ĐỘNG 1: KHỞI ĐỘNG: Ưu tiên lựa chọn các kĩ thuật khởi động có khả năng khơi gợi cảm xúc, trải nghiệm, đồng cảm, giá trị nhân văn và hứng thú thẩm mĩ; giúp học sinh bước vào thế giới nghệ thuật của tác phẩm trước khi tìm hiểu nội dung.
+           * Lựa chọn định hướng khơi gợi phù hợp với thể loại văn bản của bài học:
+             + Khơi cảm xúc với: Thơ, truyện ngắn
+             + Khơi trải nghiệm với: Văn nghị luận, truyện
+             + Khơi bối cảnh với: Văn học trung đại, sử thi
+             + Khơi xung đột với: Văn nghị luận, kịch
+             + Khơi thẩm mỹ với: Thơ, tùy bút
+           * Áp dụng đa dạng và không trùng lặp lặp đi lặp lại một kỹ thuật, chọn ngẫu nhiên một trong các kĩ thuật sau:
+             + Đọc diễn cảm một đoạn văn, đoạn thơ hoặc lời dẫn giàu cảm xúc.
+             + Nghe nhạc hoặc âm thanh phù hợp với không gian, chủ đề của tác phẩm.
+             + Xem tranh, ảnh hoặc video ngắn để tạo bối cảnh nghệ thuật.
+             + Kể một câu chuyện có thật hoặc một tình huống đời sống liên quan đến chủ đề tác phẩm.
+             + Đọc một câu nói, danh ngôn hoặc lời tâm sự gợi suy ngẫm.
+             + Viết nhanh một từ hoặc một câu thể hiện cảm xúc khi quan sát hình ảnh, nghe âm thanh hoặc đọc ngữ liệu.
+             + Hoàn thành câu mở (Ví dụ: "Nếu em là...", "Điều khiến em xúc động nhất là...", "Em nhớ nhất...").
+             + Nhật ký một phút: ghi lại một kỷ niệm hoặc cảm xúc liên quan đến chủ đề bài học.
+             + Đóng vai nhân vật hoặc nhập vai người kể chuyện trong một tình huống ngắn.
+             + Đọc tranh – Đọc ảnh (Visual Thinking): quan sát và chia sẻ cảm nhận, không tìm đáp án đúng sai.
+             + Đoán chủ đề hoặc thông điệp qua hình ảnh, âm thanh, biểu tượng hoặc một đoạn trích.
+             + Kết nối trải nghiệm cá nhân bằng câu hỏi mở ("Em đã từng...", "Em có cảm thấy...", "Nếu em ở trong hoàn cảnh đó...").
+             + Lựa chọn biểu tượng cảm xúc (Emoji Check-in) để bày tỏ tâm trạng và giải thích ngắn.
+             + Viết điều muốn gửi tới nhân vật hoặc tác giả trước khi học.
+             + AI tạo không gian cảm xúc: sử dụng hình ảnh, âm nhạc hoặc lời dẫn do AI tạo để mở đầu bài học.
      3. ĐỐI VỚI LỊCH SỬ VÀ ĐỊA LÍ (HISTORY & GEOGRAPHY):
         - Thiết kế các hoạt động sử dụng bản đồ số (Google Maps, Google Earth), công cụ phục dựng hình ảnh/video bằng AI để trực quan hóa lịch sử, địa lý địa phương.
         - Hướng dẫn học sinh cách tìm kiếm thông tin lịch sử/địa lý trực tuyến và kiểm chứng chéo với các nguồn học thuật uy tín để nhận diện thiên kiến.
@@ -252,7 +275,7 @@ export async function generateLessonPlan(lessonName: string, periods: number, su
     - PHÂN BỔ TIẾT HỌC: Nếu KHBD có nhiều tiết, hãy chia rõ nội dung cho từng tiết. Mỗi tiết bắt đầu bằng tiêu đề dòng riêng: **TIẾT X: [NỘI DUNG KIẾN THỨC BÀI HỌC]** (viết hoa, in đậm, căn giữa). 
     - QUY TẮC BẮT BUỘC CHO NHIỀU TIẾT: Đối với bài học thiết kế cho nhiều tiết (ví dụ: bài học 2, 3, 4 tiết, hay thậm chí 11, 12, 15 tiết...), bạn phải thực hiện thiết kế chi tiết tất cả các hoạt động cho từng tiết. TUYỆT ĐỐI không tóm tắt sơ sài hay gom cụm các tiết sau. TẤT CẢ các hoạt động học ở tất cả các tiết (từ Tiết 1 đến Tiết cuối cùng) đều PHẢI ĐƯỢC THIẾT KẾ ĐẦY ĐỦ VÀ CHI TIẾT THEO CẤU TRÚC 4 PHẦN (a, b, c, d) DƯỚI ĐÂY.
     - CẤM TÓM TẮT HOẶC VIẾT GHI CHÚ LƯỢC BỚT: NGHIÊM CẤM TUYỆT ĐỐI việc viết các câu lược trích hoặc để ghi chú trống bằng tiếng Việt như: "(Do giới hạn dung lượng, tôi xin lược trích...)", "(Lưu ý: Giáo viên cần tự điều chỉnh thời lượng...)", hoặc bất kỳ câu nào gợi ý giáo viên tự điền. Bạn BẮT BUỘC phải phân chia các hoạt động phù hợp (ví dụ: chia thành 4-5 hoạt động lớn phủ đều các nhóm tiết như Hoạt động 1: Tiết 1-2, Hoạt động 2: Tiết 3-5, Hoạt động 3: Tiết 6-8, Hoạt động 4: Tiết 9-11) và viết chi tiết đầy đủ 100% tất cả các tiết học từ Tiết 1 đến Tiết cuối cùng để phủ kín toàn bộ ${periods} tiết học của bài học.
-    - Hoạt động 1 (của Tiết 1) PHẢI là hoạt động khởi động tạo hứng thú qua bảng tương tác tích hợp tình huống thực tế hoặc tình huống AI (Không kiểm tra bài cũ).
+    - Hoạt động 1 (của Tiết 1) PHẢI là hoạt động khởi động bám sát các kĩ thuật khơi gợi cảm xúc, bối cảnh, thẩm mĩ và kết nối trải nghiệm đặc thù của môn Ngữ văn phù hợp với thể loại văn bản (Không kiểm tra bài cũ). Tránh lạm dụng các công cụ tương tác số như Kahoot!, Mentimeter... nếu chúng làm giảm tính nghệ thuật và sự đồng cảm với tác phẩm.
     - Cân bằng giữa thảo luận và thực hành. Áp dụng linh hoạt các KỸ THUẬT DẠY HỌC TÍCH CỰC (Kỹ thuật KWL, Áp dụng Brainstorming, Think-Pair-Share, Khăn trải bàn, Mảnh ghép, Trạm xoay, PBL - Học theo vấn đề, Tranh luận chuyên sâu, Bể cá (Fishbowl)... nhằm tối ưu hóa sự tương tác, chiếm lĩnh cách học và kiến thức bài học của học sinh).
     - Thiết kế bài dạy để dạy học tối ưu trên BẢNG TƯƠNG TÁC (Smart Board), lồng ghép kịch bản dùng trực tiếp các CÔNG CỤ TRỰC TUYẾN: Kahoot!, Quizizz, Blooket, Padlet, Mentimeter... Hãy viết rõ các bước tương tác nơi học sinh sử dụng bảng tại trường và các ứng dụng này phản hồi trực tiếp để kích thích tinh thần tương tác của bảng tương tác.
     - Thể hiện Chu trình thực hành AI khi học sinh tương tác với AI: Học sinh tự học/làm trước -> AI hỗ trợ -> Học sinh đối chiếu, kiểm chứng chéo thông tin với nguồn học thuật/SGK và trích dẫn nguồn trung thực.
@@ -290,9 +313,32 @@ export async function generateLessonPlan(lessonName: string, periods: number, su
     1. ĐỐI VỚI TIẾNG ANH (LANGUAGE & STRUCTURES):
        - Các bảng từ vựng (Vocabulary), cấu trúc (Structures) phải rõ ràng, phân biệt rõ cột Từ/Cụm từ, Từ loại, Phiên âm, Nghĩa và Câu ví dụ.
        - Tích hợp các công cụ luyện phát âm AI (như Elsa Speak), chatbot AI đóng vai (role-play), hoặc công cụ sửa lỗi ngữ pháp.
-    2. ĐỐI VỚI NGỮ VĂN (LITERATURE & READING COMPREHENSION):
-       - Trích dẫn các đoạn thơ, đoạn văn mẫu hoặc ngữ liệu văn học rõ ràng, căn lề thụt lề chuẩn.
-       - Tích hợp AI trong việc phân tích cấu trúc văn bản, tóm tắt ý chính, nhận diện biện pháp nghệ thuật, hoặc tạo lập văn bản theo phong cách khác nhau.
+     2. ĐỐI VỚI NGỮ VĂN (LITERATURE & READING COMPREHENSION):
+        - Trích dẫn các đoạn thơ, đoạn văn mẫu hoặc ngữ liệu văn học rõ ràng, căn lề thụt lề chuẩn.
+        - Tích hợp AI trong việc phân tích cấu trúc văn bản, tóm tắt ý chính, nhận diện biện pháp nghệ thuật, hoặc tạo lập văn bản theo phong cách khác nhau.
+        - BẮT BUỘC CHO HOẠT ĐỘNG 1: KHỞI ĐỘNG: Ưu tiên lựa chọn các kĩ thuật khởi động có khả năng khơi gợi cảm xúc, trải nghiệm, đồng cảm, giá trị nhân văn và hứng thú thẩm mĩ; giúp học sinh bước vào thế giới nghệ thuật của tác phẩm trước khi tìm hiểu nội dung.
+          * Lựa chọn định hướng khơi gợi phù hợp với thể loại văn bản của bài học:
+            + Khơi cảm xúc với: Thơ, truyện ngắn
+            + Khơi trải nghiệm với: Văn nghị luận, truyện
+            + Khơi bối cảnh với: Văn học trung đại, sử thi
+            + Khơi xung đột với: Văn nghị luận, kịch
+            + Khơi thẩm mỹ với: Thơ, tùy bút
+          * Áp dụng đa dạng và không trùng lặp lặp đi lặp lại một kỹ thuật, chọn ngẫu nhiên một trong các kĩ thuật sau:
+            + Đọc diễn cảm một đoạn văn, đoạn thơ hoặc lời dẫn giàu cảm xúc.
+            + Nghe nhạc hoặc âm thanh phù hợp với không gian, chủ đề của tác phẩm.
+            + Xem tranh, ảnh hoặc video ngắn để tạo bối cảnh nghệ thuật.
+            + Kể một câu chuyện có thật hoặc một tình huống đời sống liên quan đến chủ đề tác phẩm.
+            + Đọc một câu nói, danh ngôn hoặc lời tâm sự gợi suy ngẫm.
+            + Viết nhanh một từ hoặc một câu thể hiện cảm xúc khi quan sát hình ảnh, nghe âm thanh hoặc đọc ngữ liệu.
+            + Hoàn thành câu mở (Ví dụ: "Nếu em là...", "Điều khiến em xúc động nhất là...", "Em nhớ nhất...").
+            + Nhật ký một phút: ghi lại một kỷ niệm hoặc cảm xúc liên quan đến chủ đề bài học.
+            + Đóng vai nhân vật hoặc nhập vai người kể chuyện trong một tình huống ngắn.
+            + Đọc tranh – Đọc ảnh (Visual Thinking): quan sát và chia sẻ cảm nhận, không tìm đáp án đúng sai.
+            + Đoán chủ đề hoặc thông điệp qua hình ảnh, âm thanh, biểu tượng hoặc một đoạn trích.
+            + Kết nối trải nghiệm cá nhân bằng câu hỏi mở ("Em đã từng...", "Em có cảm thấy...", "Nếu em ở trong hoàn cảnh đó...").
+            + Lựa chọn biểu tượng cảm xúc (Emoji Check-in) để bày tỏ tâm trạng và giải thích ngắn.
+            + Viết điều muốn gửi tới nhân vật hoặc tác giả trước khi học.
+            + AI tạo không gian cảm xúc: sử dụng hình ảnh, âm nhạc hoặc lời dẫn do AI tạo để mở đầu bài học.
     3. ĐỐI VỚI LỊCH SỬ VÀ ĐỊA LÍ (HISTORY & GEOGRAPHY):
        - Thiết kế các hoạt động sử dụng bản đồ số (Google Maps, Google Earth), công cụ phục dựng hình ảnh/video bằng AI để trực quan hóa lịch sử, địa lý địa phương.
        - Hướng dẫn học sinh cách tìm kiếm thông tin lịch sử/địa lý trực tuyến và kiểm chứng chéo với các nguồn học thuật uy tín để nhận diện thiên kiến.
