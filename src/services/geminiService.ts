@@ -97,7 +97,7 @@ export const NLS_FRAMEWORK = {
   levelName: "Nâng cao 1 (Lớp 10, 11, 12)"
 };
 
-export async function integrateNLS(content: string, subject: string, grade: string) {
+export async function integrateNLS(content: string, subject: string, grade: string, modelName = "gemini-3.5-flash") {
   if (!API_KEY) {
     throw new Error("API Key không tồn tại. Vui lòng kiểm tra cấu hình.");
   }
@@ -211,7 +211,7 @@ export async function integrateNLS(content: string, subject: string, grade: stri
   );
 
   try {
-    const result = await Promise.race([callAIWithRetry(prompt), timeoutPromise]);
+    const result = await Promise.race([callAIWithRetry(prompt, modelName), timeoutPromise]);
     const responseText = result.text;
     
     if (!responseText || responseText.trim().length < 10) {
@@ -230,7 +230,7 @@ export async function integrateNLS(content: string, subject: string, grade: stri
   }
 }
 
-export async function generateLessonPlan(lessonName: string, periods: number, subject: string, grade: string) {
+export async function generateLessonPlan(lessonName: string, periods: number, subject: string, grade: string, modelName = "gemini-3.5-flash") {
   if (!API_KEY) {
     throw new Error("API Key không tồn tại. Vui lòng kiểm tra cấu hình.");
   }
@@ -357,7 +357,7 @@ export async function generateLessonPlan(lessonName: string, periods: number, su
   );
 
   try {
-    const result = await Promise.race([callAIWithRetry(prompt), timeoutPromise]);
+    const result = await Promise.race([callAIWithRetry(prompt, modelName), timeoutPromise]);
     return result.text;
   } catch (error: any) {
     console.error("Gemini API Error (Generate):", error);
