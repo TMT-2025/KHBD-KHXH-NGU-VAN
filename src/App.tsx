@@ -17,23 +17,15 @@ const PAYMENT_CONFIG = {
   accountName: 'TRAN MINH THANH', // Tên chủ tài khoản mới
   branch: 'Ngân hàng Quân Đội (MB Bank)',
   supportZalo: '0989618939', // Số điện thoại hỗ trợ Zalo
-  adminBypassKey: 'TMT_ADMIN_2026', // Khóa mở cổng Admin Keygen ẩn
+  adminBypassKey: 'TMT_KEYGEN_2026', // Khóa mở cổng Admin Keygen ẩn mới để tránh lộ cổng admin khi cấp key vĩnh viễn cho người dùng
   salt: 'TMT_2026_KHBD_SALT', // Muối băm mã kích hoạt bảo mật
   cassoApiKey: ''
-  // SECURITY: payOS clientId/apiKey/checksumKey were previously hardcoded here.
-  // This file is bundled into client-side JS and shipped to every visitor's browser,
-  // so any of those secrets placed here are fully public (readable via DevTools / bundle
-  // source). The checksumKey in particular authenticates payment requests, so exposing it
-  // let anyone query/replay transaction data. These secrets now live ONLY in the server's
-  // environment variables (PAYOS_CLIENT_ID / PAYOS_API_KEY / PAYOS_CHECKSUM_KEY) and are
-  // never sent to or stored in the browser. Rotate these keys on the payOS dashboard, since
-  // the previous ones are considered compromised.
 };
 
 const PAYMENT_PACKAGES = [
-  { id: 'goi1', name: 'Gói 1 (Trải nghiệm)', price: 25000, credits: 5, label: '5 lượt tải - 5.000đ/lượt', prefix: 'VIP1' },
-  { id: 'goi2', name: 'Gói 2 (Tiết kiệm)', price: 60000, credits: 15, label: '15 lượt tải - 4.000đ/lượt', prefix: 'VIP5' },
-  { id: 'goi3', name: 'Gói 3 (Pro)', price: 140000, credits: 40, label: '40 lượt tải - 3.500đ/lượt (Model Pro)', prefix: 'VIP40' }
+  { id: 'goi1', name: 'Gói 1 (Trải nghiệm)', price: 25000, credits: 5, label: '5 lượt tải - 5.000đ/lượt (Gemini 3.5 Flash)', prefix: 'VIP5' },
+  { id: 'goi2', name: 'Gói 2 (Tiết kiệm)', price: 60000, credits: 15, label: '15 lượt tải - 4.000đ/lượt (Gemini 3.5 Flash)', prefix: 'VIP15' },
+  { id: 'goi3', name: 'Gói 3 (Pro)', price: 140000, credits: 40, label: '40 lượt tải - 3.500đ/lượt (Gemini 3.5 Flash)', prefix: 'VIP40' }
 ];
 
 
@@ -852,7 +844,7 @@ export default function App() {
 
   const [showAdminPanel, setShowAdminPanel] = useState<boolean>(false);
   const [adminTargetDevice, setAdminTargetDevice] = useState<string>('');
-  const [adminSelectedPrefix, setAdminSelectedPrefix] = useState<string>('VIP5'); // Default prefix for 15 credits
+  const [adminSelectedPrefix, setAdminSelectedPrefix] = useState<string>('VIP15'); // Default prefix for 15 credits
   const [adminGeneratedKey, setAdminGeneratedKey] = useState<string>('');
   const [adminCassoKeyInput, setAdminCassoKeyInput] = useState<string>(() => localStorage.getItem('khbd_casso_api_key') || '');
   const [adminPayosClientIdInput, setAdminPayosClientIdInput] = useState<string>(() => localStorage.getItem('khbd_payos_client_id') || '');
@@ -1066,6 +1058,22 @@ export default function App() {
       return;
     }
 
+    // Nhập TMT_ADMIN_2026 nhận được lượt tải vĩnh viễn (9999 lượt, gói pro)
+    if (key === 'TMT_ADMIN_2026') {
+      setCredits(9999);
+      setTier('pro');
+      localStorage.setItem('khbd_credits', '9999');
+      localStorage.setItem('khbd_tier', 'pro');
+      setActivationSuccess(true);
+      setActivationKeyInput('');
+      setActivationError(null);
+      setTimeout(() => {
+        setShowPaywall(false);
+        setActivationSuccess(false);
+      }, 2500);
+      return;
+    }
+
     if (key === PAYMENT_CONFIG.adminBypassKey) {
       setShowAdminPanel(true);
       setActivationKeyInput('');
@@ -1079,13 +1087,13 @@ export default function App() {
     let newTier: 'free' | 'vip' | 'pro' = 'vip';
     let packageName = '';
 
-    if (key.startsWith('VIP1-')) {
+    if (key.startsWith('VIP5-')) {
       cleanKey = key.substring(5);
       addedCredits = 5;
       newTier = 'vip';
       packageName = 'Gói 1 (Trải nghiệm) - 5 lượt';
-    } else if (key.startsWith('VIP5-')) {
-      cleanKey = key.substring(5);
+    } else if (key.startsWith('VIP15-')) {
+      cleanKey = key.substring(6);
       addedCredits = 15;
       newTier = 'vip';
       packageName = 'Gói 2 (Tiết kiệm) - 15 lượt';
@@ -1853,9 +1861,9 @@ export default function App() {
                         onChange={(e) => setAdminSelectedPrefix(e.target.value)}
                         className="w-full p-3 rounded-lg border border-slate-200 bg-white text-sm font-semibold focus:border-prof-blue-primary outline-none"
                       >
-                        <option value="VIP1">Gói 1 (Trải nghiệm): 5 lượt tải (Prefix VIP1-)</option>
-                        <option value="VIP5">Gói 2 (Tiết kiệm): 15 lượt tải (Prefix VIP5-)</option>
-                        <option value="VIP40">Gói 3 (Pro): 40 lượt tải + Model Pro (Prefix VIP40-)</option>
+                        <option value="VIP5">Gói 1 (Trải nghiệm): 5 lượt tải - Gemini 3.5 Flash (Prefix VIP5-)</option>
+                        <option value="VIP15">Gói 2 (Tiết kiệm): 15 lượt tải - Gemini 3.5 Flash (Prefix VIP15-)</option>
+                        <option value="VIP40">Gói 3 (Pro): 40 lượt tải - Gemini 3.5 Flash (Prefix VIP40-)</option>
                       </select>
                     </div>
 
