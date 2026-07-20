@@ -315,7 +315,7 @@ export async function generateLessonPlan(lessonName: string, periods: number, su
     - Xây dựng đầy đủ nội dung chi tiết Phiếu học tập số 1, số 2, số 3... phục vụ các hoạt động học ở mục III. Tiêu đề "PHIẾU HỌC TẬP SỐ X: [Tên]" phải nằm độc lập trên 1 dòng riêng.
     - Hệ thống câu hỏi luyện tập và vận dụng để giáo viên nạp liệu cho Kahoot!, Quizizz hoặc Liveworksheets.
     - Yêu cầu số lượng câu hỏi trắc nghiệm: Đúng 10 câu trắc nghiệm (đối với bài học kiến thức mới) hoặc 15 câu (đối với bài ôn tập/luyện tập). Các phương án A, B, C, D trình bày ở dòng riêng biệt. Bao bọc đáp án đúng bằng thẻ <correct>...</correct>. Ví dụ: <correct>A. Na2SO4</correct>. KHÔNG viết câu "Đáp án đúng là..." mà chỉ dùng thẻ <correct>.
-    - Các bài tập tự luận, tính toán (tối thiểu 3-5 bài tập tự luận).
+    - Các bài tập tự luận, tính toán (tối thiểu 3-5 bài tập tự luận). Đối với tất cả các bài tập tự luận hay câu hỏi tự luận, yêu cầu AI trình bày câu trả lời/đáp án hoàn chỉnh dưới dạng đoạn văn hoặc văn bản đầy đủ ý nghĩa, giàu cảm xúc và phân tích sâu sắc nghệ thuật. Tuyệt đối KHÔNG được chỉ ghi các từ khóa, gạch đầu dòng các ý chính, gạch đầu dòng sơ sài hay để nhãn "Gợi ý đáp án" mà không viết hoàn chỉnh.
     - BẮT BUỘC PHẢI VIẾT ĐẦY ĐỦ NỘI DUNG ĐÁP ÁN CHI TIẾT: Đối với tất cả các bảng biểu so sánh, phân loại, thảo luận nhóm trong phần "V. CÁC PHIẾU HỌC TẬP" (ví dụ: PHIẾU HỌC TẬP SỐ 1: BẢNG SO SÁNH NHÂN VẬT), bạn BẮT BUỘC phải điền đầy đủ nội dung cho tất cả các cột (bao gồm cột "Ý nghĩa" hay bất cứ cột nội dung nào khác), tuyệt đối không được để trống hoặc dùng dấu ba chấm "..." để học sinh điền. Giáo viên Ngữ văn yêu cầu nội dung được hiển thị rõ ràng, đầy đủ và chi tiết nhất để có thể dùng giảng dạy trực tiếp trên thực tế.
 
     VI. HOẠT ĐỘNG LUYỆN TẬP
