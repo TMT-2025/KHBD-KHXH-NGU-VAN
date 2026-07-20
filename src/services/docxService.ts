@@ -776,7 +776,7 @@ export async function generateDocx(content: string, fileName: string, periods?: 
     }
 
     // Detect if we entered the Worksheet section
-    if (/^IV\.\s+CÁC PHIẾU HỌC TẬP/i.test(text) || /^CÁC PHIẾU HỌC TẬP/i.test(text)) {
+    if (/^[IVXLCDM]+\.\s+CÁC PHIẾU HỌC TẬP/i.test(text) || /^CÁC PHIẾU HỌC TẬP/i.test(text)) {
       inWorksheetSection = true;
     }
 
@@ -833,7 +833,7 @@ export async function generateDocx(content: string, fileName: string, periods?: 
       if (/^Phiếu học tập số\s+\d+/i.test(text) || /^PHIẾU HỌC TẬP SỐ\s+\d+/i.test(text)) {
         bold = true;
         customColor = "0000FF"; // Blue
-      } else if (/^IV\.\s+CÁC PHIẾU HỌC TẬP/i.test(text) || /^CÁC PHIẾU HỌC TẬP/i.test(text)) {
+      } else if (/^[IVXLCDM]+\.\s+CÁC PHIẾU HỌC TẬP/i.test(text) || /^CÁC PHIẾU HỌC TẬP/i.test(text)) {
         bold = true;
         customColor = "FF0000"; // Red
       } else {

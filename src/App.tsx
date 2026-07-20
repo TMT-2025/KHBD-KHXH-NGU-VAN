@@ -1321,11 +1321,14 @@ export default function App() {
   const exportDesignSpecs = async () => {
     const specsContent = `
 # I. QUY CHUẨN CẤU TRÚC KẾ HOẠCH BÀI DẠY (KHBD)
-1. Cấu trúc tổng thể: Tuân thủ nghiêm ngặt Công văn 5512 với 4 mục chính:
+1. Cấu trúc tổng thể: Tuân thủ nghiêm ngặt Công văn 5512 với các mục chính:
 - I. MỤC TIÊU (Kiến thức, Năng lực chung, Năng lực đặc thù, Năng lực số, Phẩm chất).
 - II. THIẾT BỊ DẠY HỌC VÀ HỌC LIỆU (Bao gồm học liệu số).
 - III. TIẾN TRÌNH DẠY HỌC (Chi tiết các hoạt động).
-- IV. CÁC PHIẾU HỌC TẬP (Nằm ở cuối tài liệu).
+- IV. KẾ HOẠCH ĐÁNH GIÁ (nếu có).
+- V. HOẠT ĐỘNG LUYỆN TẬP.
+- VI. HOẠT ĐỘNG VẬN DỤNG.
+- VII. CÁC PHIẾU HỌC TẬP (Nằm ở cuối tài liệu).
 
 2. Cấu trúc mỗi hoạt động: Gồm 4 bước chuẩn:
 - a) Mục tiêu: Xác định rõ kết quả học sinh cần đạt.
