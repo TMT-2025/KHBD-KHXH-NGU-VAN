@@ -170,7 +170,7 @@ export async function integrateNLS(content: string, subject: string, grade: stri
       2. ĐỐI VỚI NGỮ VĂN (LITERATURE & READING COMPREHENSION):
           - BẮT BUỘC dựa vào gợi ý hoạt động trong Sách giáo viên Ngữ văn lớp 10, lớp 11, lớp 12 (Bộ sách Kết nối tri thức với cuộc sống) để triển khai chi tiết cho các nội dung hoạt động cụ thể (Khởi động, Hình thành kiến thức, Luyện tập, Vận dụng) theo đúng cấu trúc Công văn 5512.
           - Các hoạt động học tập phát triển kỹ năng: Đọc văn bản, Thực hành tiếng Việt, Viết, Nói và Nghe trong KHBD phải bảo đảm biên soạn đúng theo các Yêu cầu cần đạt được quy định trong chương trình GDPT 2018 môn Ngữ văn đối với từng khối lớp tương ứng (đáp ứng đúng đặc trưng thể loại đọc hiểu, kiểu văn bản viết, và chuẩn kiến thức tiếng Việt, nói nghe).
-          - Ngoài ra, bắt buộc bổ sung/duy trì hai mục lớn: "VI. HOẠT ĐỘNG LUYỆN TẬP" (yêu cầu đa dạng hóa các hình thức luyện tập như viết kết nối đọc, thực hành ngôn ngữ, sơ đồ tư duy...) và "VII. HOẠT ĐỘNG VẬN DỤNG" (có thể sử dụng/chuyển hóa từ các câu hỏi/bài tập tự luận). Các phần VI và VII này cũng phải tham khảo gợi ý từ Sách giáo viên Ngữ văn 10, 11, 12 bộ Kết nối tri thức và bắt buộc cung cấp sản phẩm mẫu hoàn chỉnh cực kỳ chi tiết.
+          - Ngoài ra, bắt buộc bổ sung/duy trì hai mục lớn "VI. HOẠT ĐỘNG LUYỆN TẬP" và "VII. HOẠT ĐỘNG VẬN DỤNG" được thiết kế đầy đủ theo cấu trúc 4 phần của Công văn 5512 (a - Mục tiêu, b - Nội dung, c - Sản phẩm chi tiết, d - Tổ chức thực hiện dưới dạng bảng 2 cột). Trong đó, phần Luyện tập phải đa dạng hóa hình thức (viết kết nối đọc, thực hành ngôn ngữ, sơ đồ tư duy...), phần Vận dụng định hướng hành động (có thể sử dụng/chuyển hóa từ câu hỏi tự luận SGV); cả hai phần đều bám sát Sách giáo viên Ngữ văn 10, 11, 12 bộ Kết nối tri thức và bắt buộc cung cấp sản phẩm thực tế mẫu hoàn chỉnh cực kỳ chi tiết.
          - Cột "Sản phẩm dự kiến" PHẢI tạo ra sản phẩm hoàn chỉnh cực kỳ chi tiết (viết ra đoạn văn hoàn chỉnh mẫu, dàn ý chi tiết mẫu, điền đầy đủ nội dung bảng so sánh và phân tích, các câu trả lời đầy đủ), tuyệt đối không chỉ ghi tiêu đề hoặc ghi qua loa đại khái.
          - Trích dẫn các đoạn thơ, đoạn văn mẫu hoặc ngữ liệu văn học rõ ràng, căn lề thụt lề chuẩn.
          - Tích hợp AI trong việc phân tích cấu trúc văn bản, tóm tắt ý chính, nhận diện biện pháp nghệ thuật, hoặc tạo lập văn bản theo phong cách khác nhau.
@@ -320,14 +320,18 @@ export async function generateLessonPlan(lessonName: string, periods: number, su
     - BẮT BUỘC PHẢI VIẾT ĐẦY ĐỦ NỘI DUNG ĐÁP ÁN CHI TIẾT: Đối với tất cả các bảng biểu so sánh, phân loại, thảo luận nhóm trong phần "V. CÁC PHIẾU HỌC TẬP" (ví dụ: PHIẾU HỌC TẬP SỐ 1: BẢNG SO SÁNH NHÂN VẬT), bạn BẮT BUỘC phải điền đầy đủ nội dung cho tất cả các cột (bao gồm cột "Ý nghĩa" hay bất cứ cột nội dung nào khác), tuyệt đối không được để trống hoặc dùng dấu ba chấm "..." để học sinh điền. Giáo viên Ngữ văn yêu cầu nội dung được hiển thị rõ ràng, đầy đủ và chi tiết nhất để có thể dùng giảng dạy trực tiếp trên thực tế.
 
     VI. HOẠT ĐỘNG LUYỆN TẬP
-    - Thiết kế các bài tập luyện tập phong phú và đa dạng hóa hình thức luyện tập (ví dụ: thực hành tiếng Việt/ngôn ngữ, viết sáng tạo, viết kết nối với đọc, viết đoạn văn ngắn, hệ thống hóa kiến thức bằng sơ đồ tư duy trên Padlet/Canva, giải quyết tình huống giả định).
-    - Nội dung các hoạt động luyện tập phải dựa vào gợi ý hoạt động trong Sách giáo viên Ngữ văn lớp 10, lớp 11, lớp 12 bộ Kết nối tri thức với cuộc sống.
-    - BẮT BUỘC cung cấp sản phẩm thực tế mẫu cực kỳ chi tiết (viết đầy đủ đoạn văn mẫu hoàn chỉnh, dàn ý chi tiết mẫu đầy đủ, câu trả lời phân tích đầy đủ, điền đầy đủ bảng biểu...), không ghi chung chung đại khái.
+    - Hoạt động luyện tập phải được thiết kế và triển khai đầy đủ theo cấu trúc 4 phần của Công văn 5512:
+      a) Mục tiêu: Xác định rõ yêu cầu kiến thức/kỹ năng cần đạt của hoạt động luyện tập.
+      b) Nội dung: Giao nhiệm vụ, bài tập cụ thể cho học sinh (đa dạng hóa hình thức luyện tập như thực hành ngôn ngữ, viết sáng tạo, viết kết nối với đọc, sơ đồ tư duy... dựa vào gợi ý hoạt động trong Sách giáo viên Ngữ văn lớp 10, 11, 12 bộ Kết nối tri thức với cuộc sống).
+      c) Sản phẩm: Trình bày chi tiết, đầy đủ các yêu cầu của hoạt động (BẮT BUỘC viết hoàn chỉnh đoạn văn mẫu, lập dàn ý chi tiết mẫu đầy đủ, câu trả lời phân tích văn học mẫu đầy đủ ý nghĩa, giàu cảm xúc; tuyệt đối không chỉ ghi tiêu đề hoặc ghi qua loa đại khái, không chỉ ghi "Đoạn văn mẫu..." hay "Gợi ý đáp án...").
+      d) Tổ chức thực hiện: Trình bày dưới dạng bảng 2 cột "Hoạt động của GV và HS" và "Sản phẩm dự kiến" gồm đầy đủ 4 bước tiêu chuẩn của CV 5512 (Chuyển giao, Thực hiện, Báo cáo thảo luận, Nhận xét đánh giá) tương tự như cấu trúc bảng ở phần III.
 
     VII. HOẠT ĐỘNG VẬN DỤNG
-    - Thiết kế các nhiệm vụ vận dụng mang tính thực tế, định hướng hành động và rèn luyện kỹ năng thực tế cho học sinh.
-    - Có thể chuyển hóa hoặc sử dụng trực tiếp các câu hỏi tự luận/bài tập tự luận từ Sách giáo viên Ngữ văn lớp 10, lớp 11, lớp 12 bộ Kết nối tri thức với cuộc sống.
-    - BẮT BUỘC phải cung cấp sản phẩm dự kiến chi tiết cụ thể (định hướng giải quyết chi tiết, văn bản hoàn chỉnh mẫu, dự án mẫu...), tuyệt đối không ghi qua loa hoặc để trống.
+    - Hoạt động vận dụng phải được thiết kế và triển khai đầy đủ theo cấu trúc 4 phần của Công văn 5512:
+      a) Mục tiêu: Xác định rõ yêu cầu năng lực vận dụng thực tế cần đạt.
+      b) Nội dung: Giao nhiệm vụ vận dụng mang tính thực tiễn và định hướng hành động (có thể sử dụng hoặc chuyển hóa từ các câu hỏi/bài tập tự luận trong Sách giáo viên Ngữ văn lớp 10, 11, 12 bộ Kết nối tri thức với cuộc sống).
+      c) Sản phẩm: Trình bày chi tiết, đầy đủ các yêu cầu của hoạt động (BẮT BUỘC cung cấp sản phẩm mẫu hoàn chỉnh cực kỳ chi tiết như văn bản mẫu hoàn chỉnh, định hướng dự án học tập chi tiết, hướng dẫn hành động thực tế chi tiết; tuyệt đối không ghi chung chung đại khái hoặc để trống).
+      d) Tổ chức thực hiện: Trình bày dưới dạng bảng 2 cột "Hoạt động của GV và HS" và "Sản phẩm dự kiến" gồm đầy đủ 4 bước tiêu chuẩn của CV 5512 (Chuyển giao, Thực hiện, Báo cáo thảo luận, Nhận xét đánh giá) tương tự như cấu trúc bảng ở phần III.
 
     YÊU CẦU VỀ ĐỊNH DẠNG VÀ PHƯƠNG PHÁP CÁC MÔN XÃ HỘI & TIẾNG ANH:
     1. ĐỐI VỚI TIẾNG ANH (LANGUAGE & STRUCTURES):
