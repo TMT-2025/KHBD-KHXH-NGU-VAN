@@ -599,167 +599,1117 @@ const ENGLISH_12_LESSONS = [
 
 // ==================== Ngữ văn ====================
 const LITERATURE_10_LESSONS = [
-  { id: 5000, name: "Bài 1. Sức hấp dẫn của truyện kể", periods: 11 },
-  { id: 5001, name: "Đọc VB 1,2,3. Truyện về các vị thần sáng tạo thế giới", periods: 2 },
-  { id: 5002, name: "Đọc VB 4. Tản Viên từ Phán sự lục", periods: 2 },
-  { id: 5003, name: "Đọc VB 5. Chữ người tử tù", periods: 3 },
-  { id: 5004, name: "Thực hành tiếng Việt. Sử dụng từ Hán Việt", periods: 1 },
-  { id: 5005, name: "Viết. Viết VB nghị luận phân tích đánh giá một tác phẩm truyện (Chủ đề, những nét đặc sắc về hình thức nghệ thuật)", periods: 1 },
-  { id: 5006, name: "Nói và nghe. Giới thiệu, đánh giá nội dung, nghệ thuật của một tác phẩm truyện", periods: 1 },
-  { id: 5007, name: "Bài 2. Vẻ đẹp của thơ ca", periods: 11 },
-  { id: 5008, name: "Đọc VB 1,2,3. Chùm thơ hai-cư", periods: 1 },
-  { id: 5009, name: "Đọc VB 4. Thu hứng", periods: 2 },
-  { id: 5010, name: "Đọc VB 5. Mùa xuân chín", periods: 2 },
-  { id: 5011, name: "Đọc VB 6. Bản hoà âm ngôn từ trong Tiếng thu của Lưu Trọng Lư", periods: 1 },
-  { id: 5012, name: "Thực hành tiếng Việt. Lỗi dùng từ, lỗi về trật tự từ và cách sửa", periods: 1 },
-  { id: 5013, name: "Viết. Viết VB nghị luận phân tích đánh giá một tác phẩm thơ", periods: 2 },
-  { id: 5014, name: "Nói và nghe. Giới thiệu, đánh giá nội dung, nghệ thuật của một tác phẩm thơ", periods: 1 },
-  { id: 5015, name: "Bài 3. Nghệ thuật thuyết phục trong văn nghị luận", periods: 11 },
-  { id: 5016, name: "Đọc VB 1. Hiền tài là nguyên khí của quốc gia", periods: 2 },
-  { id: 5017, name: "Đọc VB 2. Yêu và đồng cảm", periods: 2 },
-  { id: 5018, name: "Đọc VB 3. Chữ bầu lên nhà thơ", periods: 2 },
-  { id: 5019, name: "Thực hành tiếng Việt. Lỗi về mạch lạc và liên kết trong đoạn văn, văn bản", periods: 1 },
-  { id: 5020, name: "Viết. Viết bài luận thuyết phục người khác từ bỏ một thói quen hay một quan niệm", periods: 1 },
-  { id: 5021, name: "Nói và nghe. Thảo luận về một vấn đề xã hội có ý kiến khác nhau", periods: 1 },
-  { id: 5022, name: "Bài 4. Sức sống của sử thi", periods: 9 },
-  { id: 5023, name: "Đọc VB 1. Héc-to từ biệt Ăng-đrô-mác", periods: 3 },
-  { id: 5024, name: "Đọc VB 2. Đăm Săn đi bắt Nữ Thần Mặt Trời", periods: 2 },
-  { id: 5025, name: "Thực hành tiếng Việt. Sử dụng trích dẫn, cước chú và đánh dấu phần bị tỉnh lược trong VB", periods: 1 },
-  { id: 5026, name: "Viết. Viết báo cáo nghiên cứu về một vấn đề", periods: 1 },
-  { id: 5027, name: "Nói và nghe. Trình bày báo cáo kết quả nghiên cứu về một vấn đề", periods: 1 },
-  { id: 5028, name: "Bài 5. Tích trò sân khấu dân gian", periods: 7 },
-  { id: 5029, name: "Đọc VB 1. Xuý Vân giả dại", periods: 2 },
-  { id: 5030, name: "Đọc VB 2. Huyện đường", periods: 1 },
-  { id: 5031, name: "Đọc VB 3. Hiện đại soi bóng tiền nhân", periods: 1 },
-  { id: 5032, name: "Viết. Viết báo cáo nghiên cứu (Về một vấn đề văn hoá truyền thống Việt Nam)", periods: 1 },
-  { id: 5033, name: "Nói và nghe. Lắng nghe và phản hồi về kết quả thuyết trình một bài nghiên cứu", periods: 1 },
-  { id: 5034, name: "Bài 6. Nguyễn Trãi – Dành còn để trợ dân này", periods: 12 },
-  { id: 5035, name: "Đọc VB 1. Tác gia Nguyễn Trãi", periods: 2 },
-  { id: 5036, name: "Đọc VB 2. Bình Ngô đại cáo", periods: 3 },
-  { id: 5037, name: "Đọc VB 3. Bảo kính cảnh giới (Bài 43)", periods: 1 },
-  { id: 5038, name: "Đọc VB 4. Dục Thuý sơn", periods: 1 },
-  { id: 5039, name: "Viết. Viết VB nghị luận về một vấn đề xã hội", periods: 2 },
-  { id: 5040, name: "Thực hành tiếng Việt. Sử dụng từ Hán Việt", periods: 1 },
-  { id: 5041, name: "Nói và nghe. Thảo luận về một vấn đề xã hội có ý kiến khác nhau", periods: 1 },
-  { id: 5042, name: "Bài 7. Quyền năng của người kể chuyện", periods: 12 },
-  { id: 5043, name: "Đọc VB 1. Người cầm quyền khôi phục uy quyền", periods: 3 },
-  { id: 5044, name: "Đọc VB 2. Dưới bóng hoàng lan", periods: 2 },
-  { id: 5045, name: "Đọc VB 3. Một chuyện đùa nho nhỏ", periods: 2 },
-  { id: 5046, name: "Thực hành tiếng Việt. Biện pháp chêm xen, biện pháp liệt kê", periods: 1 },
-  { id: 5047, name: "Viết. Viết VB nghị luận phân tích đánh giá một tác phẩm văn học (Chủ đề, nhân vật trong tác phẩm truyện)", periods: 1 },
-  { id: 5048, name: "Nói và nghe. Thảo luận về một vấn đề văn học có ý kiến khác nhau", periods: 1 },
-  { id: 5049, name: "Bài 8. Thế giới đa dạng của thông tin", periods: 11 },
-  { id: 5050, name: "Đọc VB 1. Sự sống và cái chết", periods: 2 },
-  { id: 5051, name: "Đọc VB 2. Nghệ thuật truyền thống của người Việt", periods: 2 },
-  { id: 5052, name: "Đọc VB 3. Phục hồi tầng ozone: Thành công hiếm hoi của nỗ lực toàn cầu", periods: 2 },
-  { id: 5053, name: "Viết. Viết một văn bản nội quy hoặc văn bản hướng dẫn nơi công cộng", periods: 2 },
-  { id: 5054, name: "Thực hành tiếng Việt. Sử dụng phương tiện phi ngôn ngữ", periods: 1 },
-  { id: 5055, name: "Nói và nghe. Thảo luận về văn bản nội quy hoặc văn bản hướng dẫn nơi công cộng", periods: 1 },
-  { id: 5056, name: "Bài 9. Hành trang cuộc sống", periods: 11 },
-  { id: 5057, name: "Đọc VB 1. Về chính chúng ta", periods: 2 },
-  { id: 5058, name: "Đọc VB 2. Con đường không chọn", periods: 2 },
-  { id: 5059, name: "Đọc VB 3. Một đời như kẻ tìm đường", periods: 2 },
-  { id: 5060, name: "Thực hành tiếng Việt. Sử dụng phương tiện phi ngôn ngữ (tiếp)", periods: 1 },
-  { id: 5061, name: "Viết. Viết bài luận về bản thân", periods: 2 },
-  { id: 5062, name: "Nói và nghe. Thuyết trình về một vấn đề xã hội có sử dụng kết hợp phương tiện ngôn ngữ và phi ngôn ngữ", periods: 1 },
-  { id: 5063, name: "CĐ 1. Tập nghiên cứu và viết báo cáo về một vấn đề văn học dân gian", periods: 10 },
-  { id: 5064, name: "Tìm hiểu về nghiên cứu một vấn đề văn học dân gian", periods: 1 },
-  { id: 5065, name: "Thực hành nghiên cứu", periods: 1 },
-  { id: 5066, name: "Tìm hiểu việc viết báo cáo về một vấn đề văn học dân gian", periods: 1 },
-  { id: 5067, name: "Thực hành viết báo cáo", periods: 1 },
-  { id: 5068, name: "CĐ 2. Sân khấu hoá tác phẩm văn học", periods: 15 },
-  { id: 5069, name: "Tìm hiểu về sân khấu hoá tác phẩm văn học: Đọc VB", periods: 1 },
-  { id: 5070, name: "Tìm hiểu về sân khấu hoá tác phẩm văn học: Xem vở diễn", periods: 1 },
-  { id: 5071, name: "Thực hành sân khấu hoá tác phẩm văn học: Dựng kịch bản", periods: 1 },
-  { id: 5072, name: "Thực hành sân khấu hoá tác phẩm văn học: Luyện tập & Biểu diễn", periods: 1 },
-  { id: 5073, name: "CĐ 3. Đọc, viết, giới thiệu một tập thơ, một tập truyện ngắn hoặc một tiểu thuyết", periods: 15 },
-  { id: 5074, name: "Tìm hiểu về cách đọc và Thực hành đọc", periods: 1 },
-  { id: 5075, name: "Tìm hiểu một số hướng viết bài và Thực hành viết", periods: 1 },
-  { id: 5076, name: "Tìm hiểu yêu cầu của hoạt động giới thiệu (thuyết trình) và Thực hành giới thiệu (thuyết trình)", periods: 1 },
+  {
+    "id": 5000,
+    "name": "Bài 1. Sức hấp dẫn của truyện kể",
+    "periods": 9.5
+  },
+  {
+    "id": 5001,
+    "name": "Đọc: Truyện về các vị thần sáng tạo thế giới (Thần thoại Việt Nam); Tản Viên từ Phán sự lục (Nguyễn Dữ); Chữ người tử tù (Nguyễn Tuân)",
+    "periods": 5
+  },
+  {
+    "id": 5002,
+    "name": "Thực hành tiếng Việt: Sử dụng từ Hán Việt",
+    "periods": 1
+  },
+  {
+    "id": 5003,
+    "name": "Viết: Viết văn bản nghị luận phân tích, đánh giá một tác phẩm truyện (Chủ đề, những nét đặc sắc về hình thức nghệ thuật)",
+    "periods": 2
+  },
+  {
+    "id": 5004,
+    "name": "Nói và nghe: Giới thiệu, đánh giá về nội dung và nghệ thuật của một truyện",
+    "periods": 1
+  },
+  {
+    "id": 5005,
+    "name": "Thực hành đọc: Tê-dê (Trích Thần thoại Hy Lạp, Ê-đi Ha-min-tơn kể)",
+    "periods": 0.5
+  },
+  {
+    "id": 5006,
+    "name": "Bài 2. Vẻ đẹp của thơ ca",
+    "periods": 10
+  },
+  {
+    "id": 5007,
+    "name": "Đọc: Chùm thơ hai-cư (haiku) Nhật Bản; Thu hứng (Đỗ Phủ); Mùa xuân chín (Hàn Mặc Tử); Bản hòa âm ngôn từ trong Tiếng thu của Lưu Trọng Lư (Chu Văn Sơn)",
+    "periods": 5.5
+  },
+  {
+    "id": 5008,
+    "name": "Thực hành tiếng Việt: Lỗi dùng từ, lỗi về trật tự từ và cách sửa",
+    "periods": 1
+  },
+  {
+    "id": 5009,
+    "name": "Viết: Viết văn bản nghị luận phân tích, đánh giá một tác phẩm thơ",
+    "periods": 2
+  },
+  {
+    "id": 5010,
+    "name": "Nói và nghe: Giới thiệu, đánh giá về nội dung và nghệ thuật của một tác phẩm thơ",
+    "periods": 1
+  },
+  {
+    "id": 5011,
+    "name": "Thực hành đọc: Cánh đồng (Ngân Hoa)",
+    "periods": 0.5
+  },
+  {
+    "id": 5012,
+    "name": "Bài 3. Nghệ thuật thuyết phục trong văn bản nghị luận",
+    "periods": 10
+  },
+  {
+    "id": 5013,
+    "name": "Đọc: Hiền tài là nguyên khí của quốc gia (Thân Nhân Trung); Yêu và đồng cảm (Phong Tử Khải); Chữ bầu lên nhà thơ (Lê Đạt)",
+    "periods": 5.5
+  },
+  {
+    "id": 5014,
+    "name": "Kiểm tra giữa học kì 1",
+    "periods": 2
+  },
+  {
+    "id": 5015,
+    "name": "Thực hành tiếng Việt: Lỗi về mạch lạc và liên kết trong đoạn văn, văn bản: Dấu hiệu nhận biết và cách chỉnh sửa",
+    "periods": 1
+  },
+  {
+    "id": 5016,
+    "name": "Viết: Viết bài luận thuyết phục người khác từ bỏ thói quen hay một quan niệm",
+    "periods": 2
+  },
+  {
+    "id": 5017,
+    "name": "Nói và nghe: Thảo luận về một vấn đề xã hội có ý kiến khác nhau",
+    "periods": 1
+  },
+  {
+    "id": 5018,
+    "name": "Thực hành đọc: Thế giới mạng và tôi (Nguyễn Thị Hậu)",
+    "periods": 0.5
+  },
+  {
+    "id": 5019,
+    "name": "Trả bài kiểm tra giữa học kì 1",
+    "periods": 1
+  },
+  {
+    "id": 5020,
+    "name": "Bài 4. Sức sống của sử thi",
+    "periods": 9
+  },
+  {
+    "id": 5021,
+    "name": "Đọc: Héc-to từ biệt Ăng-đrô-mác (Hô-me-rơ); Đăm Săn đi bắt Nữ Thần Mặt Trời (Sử thi Ê-đê)",
+    "periods": 4.5
+  },
+  {
+    "id": 5022,
+    "name": "Thực hành tiếng Việt: Sử dụng trích dẫn, cước chú và cách đánh dấu phần bị tỉnh lược trong văn bản",
+    "periods": 1
+  },
+  {
+    "id": 5023,
+    "name": "Viết: Viết báo cáo nghiên cứu về một vấn đề",
+    "periods": 2
+  },
+  {
+    "id": 5024,
+    "name": "Nói và nghe: Trình bày kết quả báo cáo nghiên cứu về một vấn đề",
+    "periods": 1
+  },
+  {
+    "id": 5025,
+    "name": "Thực hành đọc: Ra-ma buộc tội (Trích Ra-ma-ya-na – Van-mi-ki)",
+    "periods": 0.5
+  },
+  {
+    "id": 5026,
+    "name": "Bài 5. Tích trò sân khấu dân gian",
+    "periods": 7.5
+  },
+  {
+    "id": 5027,
+    "name": "Đọc: Xúy Vân giả dại (Kim Nham); Huyện đường (Nghêu, Sò, Ốc, Hến); Múa rối nước – hiện đại soi bóng tiền nhân (Phạm Thùy Dung)",
+    "periods": 4
+  },
+  {
+    "id": 5028,
+    "name": "Viết: Viết báo cáo nghiên cứu (Về một vấn đề văn hóa truyền thống Việt Nam)",
+    "periods": 2
+  },
+  {
+    "id": 5029,
+    "name": "Nói và nghe: Lắng nghe và phản hồi về một bài thuyết trình kết quả nghiên cứu",
+    "periods": 1
+  },
+  {
+    "id": 5030,
+    "name": "Thực hành đọc: Hồn thiêng đưa đường (Trích tuồng Sơn Hậu)",
+    "periods": 0.5
+  },
+  {
+    "id": 5031,
+    "name": "Ôn tập kiểm tra học kì 1",
+    "periods": 2
+  },
+  {
+    "id": 5032,
+    "name": "Kiểm tra học kì 1",
+    "periods": 2
+  },
+  {
+    "id": 5033,
+    "name": "Trả bài kiểm tra học kì 1",
+    "periods": 1
+  },
+  {
+    "id": 5034,
+    "name": "Bài 6. Nguyễn Trãi – 'Dành còn để trợ dân này'",
+    "periods": 10.5
+  },
+  {
+    "id": 5035,
+    "name": "Đọc: Tác gia Nguyễn Trãi; Bình Ngô đại cáo; Bảo kính cảnh giới (bài 43); Dục Thúy Sơn",
+    "periods": 6
+  },
+  {
+    "id": 5036,
+    "name": "Thực hành tiếng Việt: Sử dụng từ Hán Việt (tiếp theo)",
+    "periods": 1
+  },
+  {
+    "id": 5037,
+    "name": "Viết: Viết văn bản nghị luận về một vấn đề xã hội",
+    "periods": 2
+  },
+  {
+    "id": 5038,
+    "name": "Nói và nghe: Thảo luận về một vấn đề xã hội có ý kiến khác nhau",
+    "periods": 1
+  },
+  {
+    "id": 5039,
+    "name": "Thực hành đọc: Ngôn chí (bài 3); Bạch Đằng hải khẩu (Nguyễn Trãi)",
+    "periods": 0.5
+  },
+  {
+    "id": 5040,
+    "name": "Bài 7. Quyền năng của người kể chuyện",
+    "periods": 11.5
+  },
+  {
+    "id": 5041,
+    "name": "Đọc: Người cầm quyền khôi phục uy quyền (Vích-to Huy-gô); Dưới bóng hoàng lan (Thạch Lam); Một chuyện đùa nho nhỏ (An-tôn Sê-khốp)",
+    "periods": 7
+  },
+  {
+    "id": 5042,
+    "name": "Thực hành tiếng Việt: Biện pháp chêm xen, biện pháp liệt kê",
+    "periods": 1
+  },
+  {
+    "id": 5043,
+    "name": "Viết: Viết bài văn nghị luận phân tích, đánh giá một tác phẩm văn học (chủ đề và nhân vật trong tác phẩm truyện)",
+    "periods": 2
+  },
+  {
+    "id": 5044,
+    "name": "Nói và nghe: Thảo luận về một vấn đề văn học có ý kiến khác nhau",
+    "periods": 1
+  },
+  {
+    "id": 5045,
+    "name": "Thực hành đọc: Con khướu sổ lòng (Nguyễn Quang Sáng)",
+    "periods": 0.5
+  },
+  {
+    "id": 5046,
+    "name": "Kiểm tra giữa kì 2",
+    "periods": 2
+  },
+  {
+    "id": 5047,
+    "name": "Trả bài kiểm tra giữa kì 2",
+    "periods": 1
+  },
+  {
+    "id": 5048,
+    "name": "Bài 8. Thế giới đa dạng của thông tin",
+    "periods": 10.5
+  },
+  {
+    "id": 5049,
+    "name": "Đọc: Sự sống và cái chết (Trịnh Xuân Thuận); Nghệ thuật truyền thống của người Việt (Nguyễn Văn Huyên); Phục hồi tầng ozone: Thành công hiếm hoi của nỗ lực toàn cầu (Lê My)",
+    "periods": 6
+  },
+  {
+    "id": 5050,
+    "name": "Thực hành tiếng Việt: Sử dụng phương tiện phi ngôn ngữ",
+    "periods": 1
+  },
+  {
+    "id": 5051,
+    "name": "Viết: Viết một văn bản nội quy hoặc văn bản hướng dẫn nơi công cộng",
+    "periods": 2
+  },
+  {
+    "id": 5052,
+    "name": "Nói và nghe: Thảo luận về văn bản nội quy hoặc văn bản hướng dẫn nơi công cộng",
+    "periods": 1
+  },
+  {
+    "id": 5053,
+    "name": "Thực hành đọc: Tính cách của cây (Pê-tơ Vô-lơ-lê-ben)",
+    "periods": 0.5
+  },
+  {
+    "id": 5054,
+    "name": "Bài 9. Hành trang cuộc sống",
+    "periods": 10.5
+  },
+  {
+    "id": 5055,
+    "name": "Đọc: Về chính chúng ta (Các-lô Rô-ve-li); Con đường không chọn (Rô-bớt Phờ-rót); Một đời như kẻ tìm đường (Phan Văn Trường)",
+    "periods": 6
+  },
+  {
+    "id": 5056,
+    "name": "Thực hành tiếng Việt: Sử dụng phương tiện phi ngôn ngữ (tiếp theo)",
+    "periods": 1
+  },
+  {
+    "id": 5057,
+    "name": "Viết: Viết bài luận về bản thân",
+    "periods": 2
+  },
+  {
+    "id": 5058,
+    "name": "Nói và nghe: Thuyết trình về một vấn đề xã hội có sử dụng kết hợp phương tiện ngôn ngữ và phương tiện giao tiếp phi ngôn ngữ",
+    "periods": 1
+  },
+  {
+    "id": 5059,
+    "name": "Thực hành đọc: Mãi mãi tuổi hai mươi (Nguyễn Văn Thạc)",
+    "periods": 0.5
+  },
+  {
+    "id": 5060,
+    "name": "Ôn tập kiểm tra học kì 2",
+    "periods": 2
+  },
+  {
+    "id": 5061,
+    "name": "Kiểm tra cuối kì 2",
+    "periods": 2
+  },
+  {
+    "id": 5062,
+    "name": "Trả bài Kiểm tra cuối kì 2",
+    "periods": 1
+  },
+  {
+    "id": 5063,
+    "name": "Chuyên đề 1. Tập nghiên cứu và viết báo cáo về một vấn đề văn học dân gian",
+    "periods": 10
+  },
+  {
+    "id": 5064,
+    "name": "Phần 1. Tập nghiên cứu (Xác định đề tài, thu thập thông tin, xử lí thông tin)",
+    "periods": 4
+  },
+  {
+    "id": 5065,
+    "name": "Phần 2. Viết báo cáo nghiên cứu về một vấn đề văn học dân gian & Thuyết trình kết quả nghiên cứu",
+    "periods": 5
+  },
+  {
+    "id": 5066,
+    "name": "Chuyên đề 2. Sân khấu hóa tác phẩm văn học",
+    "periods": 15
+  },
+  {
+    "id": 5067,
+    "name": "Phần 1. Tìm hiểu về sân khấu hóa tác phẩm văn học (Đọc kịch bản, Xem vở diễn)",
+    "periods": 5
+  },
+  {
+    "id": 5068,
+    "name": "Phần 2. Thực hành sân khấu hóa tác phẩm văn học (Đọc kịch bản, các nhân tố, các bước, thực hành)",
+    "periods": 10
+  },
+  {
+    "id": 5069,
+    "name": "Chuyên đề 3. Đọc, viết và giới thiệu một tập thơ, một tập truyện ngắn hoặc một tiểu thuyết",
+    "periods": 10
+  },
+  {
+    "id": 5070,
+    "name": "Phần 1. Đọc một tập thơ, một tập truyện ngắn hoặc một tiểu thuyết (Cách đọc, Thực hành)",
+    "periods": 2
+  },
+  {
+    "id": 5071,
+    "name": "Phần 2. Viết bài về một tập thơ, một tập truyện ngắn hoặc một tiểu thuyết (Mục đích viết, Một số hướng viết, Thực hành viết, Báo cáo)",
+    "periods": 4
+  },
+  {
+    "id": 5072,
+    "name": "Phần 3. Giới thiệu dưới hình thức nói về một tập thơ, một tập truyện ngắn hoặc một tiểu thuyết (Trình bày trước lớp, Tổ chức sự kiện)",
+    "periods": 4
+  }
 ];
 
 const LITERATURE_11_LESSONS = [
-  { id: 5100, name: "Bài 1. Câu chuyện và điểm nhìn trong truyện kể", periods: 11 },
-  { id: 5101, name: "Bài 2. Cấu tứ và hình ảnh trong thơ trữ tình", periods: 11 },
-  { id: 5102, name: "Bài 3. Cấu trúc của văn bản nghị luận", periods: 10 },
-  { id: 5103, name: "Bài 4. Tự sự trong truyện thơ dân gian và trong thơ trữ tình", periods: 9 },
-  { id: 5104, name: "Bài 5. Nhân vật và xung đột trong bi kịch", periods: 8 },
-  { id: 5105, name: "Bài 6. Nguyễn Du – “Những điều trông thấy mà đau đớn lòng”", periods: 12 },
-  { id: 5106, name: "Bài 7. Ghi chép và tưởng tượng trong kí", periods: 11 },
-  { id: 5107, name: "Bài 8. Cấu trúc của văn bản thông tin", periods: 11 },
-  { id: 5108, name: "Bài 9. Lựa chọn và hành động", periods: 11 },
+  {
+    "id": 5100,
+    "name": "Bài 1. Câu chuyện và điểm nhìn trong truyện kể",
+    "periods": 10
+  },
+  {
+    "id": 5101,
+    "name": "Đọc văn bản: Vợ nhặt (Kim Lân) & Chí Phèo (Nam Cao)",
+    "periods": 5.5
+  },
+  {
+    "id": 5102,
+    "name": "Thực hành tiếng Việt: Đặc điểm cơ bản của ngôn ngữ nói và ngôn ngữ viết",
+    "periods": 1
+  },
+  {
+    "id": 5103,
+    "name": "Viết văn bản nghị luận về tác phẩm truyện (những đặc điểm trong cách kể của tác giả)",
+    "periods": 2
+  },
+  {
+    "id": 5104,
+    "name": "Nói và nghe: Thuyết trình về nghệ thuật kể chuyện trong một tác phẩm truyện",
+    "periods": 1
+  },
+  {
+    "id": 5105,
+    "name": "Củng cố mở rộng - Thực hành đọc: Cải ơi! (Nguyễn Ngọc Tư)",
+    "periods": 0.5
+  },
+  {
+    "id": 5106,
+    "name": "Bài 2. Cấu tứ và hình ảnh trong thơ trữ tình",
+    "periods": 10
+  },
+  {
+    "id": 5107,
+    "name": "Đọc văn bản: Nhớ đồng (Tố Hữu), Tràng giang (Huy Cận), Con đường mùa đông (Pushkin)",
+    "periods": 5.5
+  },
+  {
+    "id": 5108,
+    "name": "Thực hành tiếng Việt: Một số hiện tượng phá vỡ những quy tắc ngôn ngữ thông thường: đặc điểm và tác dụng",
+    "periods": 1
+  },
+  {
+    "id": 5109,
+    "name": "Viết văn bản nghị luận về tác phẩm thơ (Tìm hiểu cấu tứ và hình ảnh của tác phẩm)",
+    "periods": 2
+  },
+  {
+    "id": 5110,
+    "name": "Nói và nghe: Giới thiệu một tác phẩm nghệ thuật",
+    "periods": 1
+  },
+  {
+    "id": 5111,
+    "name": "Củng cố mở rộng - Thực hành đọc: Thời gian (Văn Cao)",
+    "periods": 0.5
+  },
+  {
+    "id": 5112,
+    "name": "Bài 3. Cấu trúc của văn bản nghị luận",
+    "periods": 10
+  },
+  {
+    "id": 5113,
+    "name": "Đọc văn bản: Chiếu cầu hiền (Ngô Thì Nhậm), Tôi có một ước mơ (M. L. King), Một thời đại trong thi ca (Hoài Thanh)",
+    "periods": 5.5
+  },
+  {
+    "id": 5114,
+    "name": "Kiểm tra giữa học kỳ I",
+    "periods": 2
+  },
+  {
+    "id": 5115,
+    "name": "Thực hành tiếng Việt: Đặc điểm cơ bản của ngôn ngữ nói và ngôn ngữ viết (tiếp theo)",
+    "periods": 1
+  },
+  {
+    "id": 5116,
+    "name": "Viết văn bản nghị luận về một vấn đề xã hội (Con người với cuộc sống xung quanh)",
+    "periods": 2
+  },
+  {
+    "id": 5117,
+    "name": "Nói và nghe: Trình bày ý kiến đánh giá, bình luận về một vấn đề xã hội",
+    "periods": 1
+  },
+  {
+    "id": 5118,
+    "name": "Củng cố, mở rộng - Thực hành đọc: Tiếp xúc với tác phẩm (Thái Bá Vân)",
+    "periods": 0.5
+  },
+  {
+    "id": 5119,
+    "name": "Trả bài kiểm tra giữa kỳ I",
+    "periods": 1
+  },
+  {
+    "id": 5120,
+    "name": "Bài 4. Tự sự trong truyện thơ dân gian và trong thơ trữ tình",
+    "periods": 9
+  },
+  {
+    "id": 5121,
+    "name": "Đọc văn bản: Lời tiễn dặn, Dương phụ hành (Cao Bá Quát), Thuyền và biển (Xuân Quỳnh)",
+    "periods": 4.5
+  },
+  {
+    "id": 5122,
+    "name": "Thực hành tiếng Việt: Lỗi về thành phần câu và cách sửa",
+    "periods": 1
+  },
+  {
+    "id": 5123,
+    "name": "Viết bài văn nghị luận về một vấn đề xã hội (hình thành lối sống tích cực trong xã hội hiện đại)",
+    "periods": 2
+  },
+  {
+    "id": 5124,
+    "name": "Nói và nghe: Trình bày ý kiến đánh giá, bình luận về vấn đề xã hội",
+    "periods": 1
+  },
+  {
+    "id": 5125,
+    "name": "Củng cố mở rộng - Thực hành đọc: Nàng Ờm nhắn nhủ",
+    "periods": 0.5
+  },
+  {
+    "id": 5126,
+    "name": "Bài 5. Nhân vật và xung đột trong bi kịch",
+    "periods": 8
+  },
+  {
+    "id": 5127,
+    "name": "Đọc văn bản: Sống hay không sống - đó là vấn đề (Shakespeare), Vĩnh biệt Cửu Trùng Đài (Nguyễn Huy Tưởng), Prô-mê-tê bị xiềng",
+    "periods": 4.5
+  },
+  {
+    "id": 5128,
+    "name": "Viết báo cáo nghiên cứu về một vấn đề tự nhiên, xã hội",
+    "periods": 2
+  },
+  {
+    "id": 5129,
+    "name": "Nói và nghe: Trình bày báo cáo kết quả nghiên cứu về một vấn đề đáng quan tâm",
+    "periods": 1
+  },
+  {
+    "id": 5130,
+    "name": "Củng cố mở rộng - Thực hành đọc: Prô-mê-tê bị xiềng (Ét-sin)",
+    "periods": 0.5
+  },
+  {
+    "id": 5131,
+    "name": "Ôn tập học kì 1",
+    "periods": 1
+  },
+  {
+    "id": 5132,
+    "name": "Kiểm tra cuối kì 1",
+    "periods": 2
+  },
+  {
+    "id": 5133,
+    "name": "Trả bài cuối kỳ 1",
+    "periods": 1
+  },
+  {
+    "id": 5134,
+    "name": "Bài 6. Nguyễn Du – Những điều còn thấy mà đau đớn lòng",
+    "periods": 11
+  },
+  {
+    "id": 5135,
+    "name": "Đọc văn bản: Tác giả Nguyễn Du, Trao duyên (Nguyễn Du), Độc Tiểu Thanh kí (Nguyễn Du)",
+    "periods": 6
+  },
+  {
+    "id": 5136,
+    "name": "Thực hành tiếng Việt: Biện pháp tu từ lặp cấu trúc, biện pháp tu từ đối",
+    "periods": 1
+  },
+  {
+    "id": 5137,
+    "name": "Viết văn bản thuyết minh về một tác phẩm văn học",
+    "periods": 2
+  },
+  {
+    "id": 5138,
+    "name": "Nghe và nói: Giới thiệu về một tác phẩm văn học. Thực hành đọc: Chí khí anh hùng, Mộng đắc thái liên",
+    "periods": 2
+  },
+  {
+    "id": 5139,
+    "name": "Bài 7. Ghi chép và tưởng tượng trong ký",
+    "periods": 11
+  },
+  {
+    "id": 5140,
+    "name": "Đọc văn bản: Ai đã đặt tên cho dòng sông (Hoàng Phủ Ngọc Tường), Và tôi vẫn muốn mẹ, Cà Mau quê xứ",
+    "periods": 6.5
+  },
+  {
+    "id": 5141,
+    "name": "Thực hành tiếng Việt: Một số hiện tượng phá vỡ quy tắc ngôn ngữ thông thường: đặc điểm và tác dụng",
+    "periods": 1
+  },
+  {
+    "id": 5142,
+    "name": "Viết văn bản thuyết minh về một sự vật, hiện tượng trong đời sống xã hội",
+    "periods": 2
+  },
+  {
+    "id": 5143,
+    "name": "Nói và nghe: Thảo luận tranh luận về một vấn đề trong đời sống",
+    "periods": 1
+  },
+  {
+    "id": 5144,
+    "name": "Củng cố, mở rộng - Thực hành đọc: Cây diêm cuối cùng (Cao Huy Thuần)",
+    "periods": 0.5
+  },
+  {
+    "id": 5145,
+    "name": "Kiểm tra giữa kỳ 2",
+    "periods": 2
+  },
+  {
+    "id": 5146,
+    "name": "Bài 8. Cấu trúc của văn bản thông tin",
+    "periods": 10
+  },
+  {
+    "id": 5147,
+    "name": "Đọc văn bản: Nữ phóng viên đầu tiên, Trí thông minh nhân tạo, Pa-ra-lim-pích một lịch sử chữa lành những vết thương",
+    "periods": 5.5
+  },
+  {
+    "id": 5148,
+    "name": "Trả bài giữa kì 2",
+    "periods": 1
+  },
+  {
+    "id": 5149,
+    "name": "Thực hành tiếng Việt: Sử dụng phương tiện phi ngôn ngữ",
+    "periods": 1
+  },
+  {
+    "id": 5150,
+    "name": "Viết bài văn thuyết minh về một sự vật, hiện tượng trong tự nhiên",
+    "periods": 2
+  },
+  {
+    "id": 5151,
+    "name": "Nói và nghe: Tranh biện về một vấn đề trong đời sống",
+    "periods": 1
+  },
+  {
+    "id": 5152,
+    "name": "Củng cố, mở rộng - Thực hành đọc: Ca nhạc ở miệt vườn (Sơn Nam)",
+    "periods": 0.5
+  },
+  {
+    "id": 5153,
+    "name": "Bài 9. Lựa chọn và hành động",
+    "periods": 11
+  },
+  {
+    "id": 5154,
+    "name": "Đọc văn bản: Bài ca ngất ngưởng (Nguyễn Công Trứ), Văn tế nghĩa sĩ Cần Giuộc (Nguyễn Đình Chiểu), Cộng đồng và cá thể (Albert Einstein)",
+    "periods": 6.5
+  },
+  {
+    "id": 5155,
+    "name": "Thực hành tiếng Việt: Cách giải thích nghĩa của từ",
+    "periods": 1
+  },
+  {
+    "id": 5156,
+    "name": "Viết văn bản nghị luận về một tác phẩm nghệ thuật",
+    "periods": 2
+  },
+  {
+    "id": 5157,
+    "name": "Nói và nghe: Giới thiệu một tác phẩm nghệ thuật",
+    "periods": 1
+  },
+  {
+    "id": 5158,
+    "name": "Củng cố, mở rộng - Thực hành đọc: \"Làm việc\" cũng là \"làm người\" (Giản Tư Trung)",
+    "periods": 0.5
+  },
+  {
+    "id": 5159,
+    "name": "Ôn tập cuối kì 2",
+    "periods": 2
+  },
+  {
+    "id": 5160,
+    "name": "Kiểm tra cuối học kỳ II",
+    "periods": 2
+  },
+  {
+    "id": 5161,
+    "name": "Trả bài kiểm tra cuối học kỳ II",
+    "periods": 1
+  },
+  {
+    "id": 5162,
+    "name": "Chuyên đề 1. Tập nghiên cứu và viết báo cáo về một vấn đề văn học trung đại Việt Nam",
+    "periods": 10
+  },
+  {
+    "id": 5163,
+    "name": "Phần thứ nhất: Tập nghiên cứu một vấn đề văn học trung đại Việt Nam",
+    "periods": 4
+  },
+  {
+    "id": 5164,
+    "name": "Phần thứ hai: Viết báo cáo nghiên cứu một vấn đề văn học trung đại Việt Nam",
+    "periods": 4
+  },
+  {
+    "id": 5165,
+    "name": "Thuyết trình giới thiệu về một vấn đề văn học trung đại",
+    "periods": 2
+  },
+  {
+    "id": 5166,
+    "name": "Chuyên đề 2. Tìm hiểu ngôn ngữ trong đời sống xã hội hiện đại",
+    "periods": 15
+  },
+  {
+    "id": 5167,
+    "name": "Phần thứ nhất: Bản chất xã hội - văn hóa của ngôn ngữ",
+    "periods": 6
+  },
+  {
+    "id": 5168,
+    "name": "Phần thứ hai: Sự phát triển của ngôn ngữ trong đời sống xã hội",
+    "periods": 5
+  },
+  {
+    "id": 5169,
+    "name": "Phần thứ ba: Cách vận dụng yếu tố mới của ngôn ngữ đương đại trong giao tiếp",
+    "periods": 4
+  },
+  {
+    "id": 5170,
+    "name": "Chuyên đề 3. Đọc, viết và giới thiệu về một tác giả văn học",
+    "periods": 10
+  },
+  {
+    "id": 5171,
+    "name": "Phần thứ nhất: Đọc về một tác giả văn học",
+    "periods": 5
+  },
+  {
+    "id": 5172,
+    "name": "Phần thứ hai: Viết về một tác giả văn học",
+    "periods": 4
+  },
+  {
+    "id": 5173,
+    "name": "Phần thứ ba: Thuyết trình giới thiệu về một tác giả văn học",
+    "periods": 2
+  }
 ];
 
 const LITERATURE_12_LESSONS = [
-  { id: 5200, name: "Bài 1. Khả năng lớn lao của tiểu thuyết", periods: 11 },
-  { id: 5201, name: "Đọc. Xuân Tóc Đỏ cứu quốc (Trích Số Đỏ - Vũ Trọng Phụng)", periods: 3 },
-  { id: 5202, name: "Đọc. Nỗi buồn chiến tranh (Trích - Bảo Ninh)", periods: 3 },
-  { id: 5203, name: "Thực hành tiếng Việt. Biện pháp tu từ nói mỉa, nghịch ngữ. Đặc điểm và tác dụng", periods: 1 },
-  { id: 5204, name: "Viết. Viết văn bản nghị luận so sánh, đánh giá hai tác phẩm truyện", periods: 2 },
-  { id: 5205, name: "Nói và nghe. Trình bày kết quả so sánh, đánh giá hai tác phẩm truyện", periods: 1 },
-  { id: 5206, name: "Đọc thực hành. Trên xuồng cứu nạn (Trích Cuộc đời của Pi - Yann Martel)", periods: 1 },
-  { id: 5207, name: "Bài 2. Những thế giới thơ", periods: 11 },
-  { id: 5208, name: "Đọc. Tri thức Ngữ văn; Cảm hoài (Nỗi lòng - Đặng Dung)", periods: 2 },
-  { id: 5209, name: "Đọc. Tây Tiến (Quang Dũng)", periods: 2 },
-  { id: 5210, name: "Đọc. Đàn Ghi-ta của Lor-ca (Thanh Thảo)", periods: 2 },
-  { id: 5211, name: "Thực hành tiếng Việt. Tác dụng của một số biện pháp tu từ trong thơ", periods: 1 },
-  { id: 5212, name: "Viết. Viết bài văn nghị luận so sánh, đánh giá hai tác phẩm thơ", periods: 2 },
-  { id: 5213, name: "Nói và nghe. Trình bày kết quả so sánh, đánh giá hai tác phẩm thơ", periods: 1 },
-  { id: 5214, name: "Đọc thực hành. Bài thơ số 28 (Rabindranath Tagore)", periods: 1 },
-  { id: 5215, name: "Bài 3. Lập luận trong văn nghị luận", periods: 10 },
-  { id: 5216, name: "Đọc. Nhìn về vốn văn hóa dân tộc (Trích - Trần Đình Hượu)", periods: 2 },
-  { id: 5217, name: "Đọc. Năng lực sáng tạo (Trích - Phan Đình Diệu)", periods: 2 },
-  { id: 5218, name: "Đọc. Mấy ý nghĩ về thơ (Trích - Nguyễn Đình Thi)", periods: 2 },
-  { id: 5219, name: "Thực hành tiếng Việt. Lỗi logic, lỗi câu mơ hồ và cách sửa", periods: 1 },
-  { id: 5220, name: "Viết. Viết bài văn nghị luận về một vấn đề liên quan đến tuổi trẻ (những hoài bão ước mơ)", periods: 2 },
-  { id: 5221, name: "Nói và nghe. Thuyết minh về một vấn đề liên quan đến tuổi trẻ", periods: 1 },
-  { id: 5222, name: "Đọc thực hành. Cảm hứng và sáng tạo (Trích - Nguyễn Trần Bạt)", periods: 1 },
-  { id: 5223, name: "Bài 4. Yếu tố kì ảo trong truyện kể", periods: 9 },
-  { id: 5224, name: "Đọc. Hải khẩu linh từ - Đền thiêng cửa biển (Trích - Đoàn Thị Điểm)", periods: 2 },
-  { id: 5225, name: "Đọc. Muối của rừng (Trích - Nguyễn Huy Thiệp)", periods: 2 },
-  { id: 5226, name: "Thực hành tiếng Việt. Nghệ thuật sử dụng điển cố trong tác phẩm văn học", periods: 1 },
-  { id: 5227, name: "Viết. Viết bài văn nghị luận về việc vay mượn - cải biến - sáng tạo trong một tác phẩm văn học", periods: 2 },
-  { id: 5228, name: "Nói và nghe. Trình bày việc vay mượn - cải biến - sáng tạo trong một tác phẩm văn học", periods: 1 },
-  { id: 5229, name: "Đọc thực hành. Bến trần gian (Trích - Lưu Sơn Minh)", periods: 1 },
-  { id: 5230, name: "Bài 5. Tiếng cười của hài kịch", periods: 9 },
-  { id: 5231, name: "Đọc. Nhân vật quan trọng (Trích Quan thanh tra - Nikolai Gogol)", periods: 3 },
-  { id: 5232, name: "Đọc. Giấu của (Trích Quẫn - Lộng Chương)", periods: 2 },
-  { id: 5233, name: "Viết. Viết báo cáo nghiên cứu về một vấn đề tự nhiên, xã hội", periods: 2 },
-  { id: 5234, name: "Nói và nghe. Trình bày báo cáo kết quả nghiên cứu tự nhiên, xã hội", periods: 1 },
-  { id: 5235, name: "Đọc thực hành. Cẩn thận hão (Trích Thợ cạo thành Xê-vin - Beaumarchais)", periods: 1 },
-  { id: 5236, name: "Bài 6. Hồ Chí Minh - \"Văn hóa phải soi đường cho quốc dân đi\"", periods: 12 },
-  { id: 5237, name: "Đọc. Tác gia Hồ Chí Minh", periods: 2 },
-  { id: 5238, name: "Đọc. Tuyên ngôn độc lập (Hồ Chí Minh)", periods: 2 },
-  { id: 5239, name: "Đọc. Mộ (Chiều tối - Hồ Chí Minh)", periods: 1 },
-  { id: 5240, name: "Đọc. Nguyên tiêu (Rằm tháng giêng - Hồ Chí Minh)", periods: 1 },
-  { id: 5241, name: "Đọc. Những trò lố hay là Va-ren và Phan Bội Châu (Nguyễn Ái Quốc)", periods: 2 },
-  { id: 5242, name: "Thực hành tiếng Việt. Một số biện pháp làm tăng tính khẳng định, phủ định trong văn bản nghị luận", periods: 1 },
-  { id: 5243, name: "Viết. Viết báo cáo kết quả của bài tập dự án", periods: 2 },
-  { id: 5244, name: "Nói và nghe. Trình bày kết quả của bài tập dự án", periods: 1 },
-  { id: 5245, name: "Đọc thực hành. Vọng nguyệt (Ngắm trăng - Hồ Chí Minh); Cảnh khuya (Hồ Chí Minh)", periods: 1 },
-  { id: 5246, name: "Bài 7. Sự thật trong tác phẩm kí", periods: 10 },
-  { id: 5247, name: "Đọc. Tri thức ngữ văn; Nghệ thuật băm thịt gà (Trích Việc làng - Ngô Tất Tố)", periods: 3 },
-  { id: 5248, name: "Đọc. Bước vào đời (Trích Nghĩ nhớ chiều hôm - Đào Duy Anh)", periods: 2 },
-  { id: 5249, name: "Thực hành tiếng Việt. Ngôn ngữ trang trọng và ngôn ngữ thân mật", periods: 1 },
-  { id: 5250, name: "Viết. Viết bài văn nghị luận về một vấn đề liên quan đến tuổi trẻ (Cách ứng xử về các mối quan hệ gia đình, xã hội)", periods: 2 },
-  { id: 5251, name: "Nói và nghe. Trình bày một vấn đề liên quan đến tuổi trẻ (Cách ứng xử về các mối quan hệ gia đình, xã hội)", periods: 1 },
-  { id: 5252, name: "Đọc thực hành. Vĩ tuyến 17 (Trích Gánh gánh. gồng gồng. - Xuân Phượng)", periods: 1 },
-  { id: 5253, name: "Bài 8. Dữ liệu trong văn bản thông tin", periods: 12 },
-  { id: 5254, name: "Đọc. Pa-ra-na (Trích Nhiệt đới buồn - Claude Lévi-Strauss)", periods: 2 },
-  { id: 5255, name: "Đọc. Giáo dục khai phóng ở Việt Nam nhìn từ Đông Kinh Nghĩa Thục (Nguyễn Nam)", periods: 2 },
-  { id: 5256, name: "Đọc. Đời Muối (Trích: Đời muối - Mark Kurlansky)", periods: 2 },
-  { id: 5257, name: "Thực hành tiếng Việt. Tôn trọng và bảo vệ quyền sở hữu trí tuệ", periods: 1 },
-  { id: 5258, name: "Viết. Viết thư trao đổi về công việc hoặc một vấn đề đáng quan tâm", periods: 2 },
-  { id: 5259, name: "Nói và nghe. Tranh biện về một vấn đề trong đời sống", periods: 2 },
-  { id: 5260, name: "Đọc thực hành. Sách thay đổi lịch sử loài người (Vũ Đức Liêm)", periods: 1 },
-  { id: 5261, name: "Bài 9. Văn học và cuộc đời", periods: 11 },
-  { id: 5262, name: "Đọc. Tri thức Ngữ văn; Vội Vàng (Xuân Diệu)", periods: 3 },
-  { id: 5263, name: "Đọc. Trở về (Trích Ông già và biển cả - Ernest Hemingway)", periods: 2 },
-  { id: 5264, name: "Đọc. Hồn Trương Ba, da hàng thịt (Trích - Lưu Quang Vũ)", periods: 2 },
-  { id: 5265, name: "Thực hành tiếng Việt. Giữ gìn và phát triển tiếng Việt", periods: 1 },
-  { id: 5266, name: "Viết. Viết bài phát biểu trong lễ phát động một phong trào hoặc một hoạt động xã hội", periods: 2 },
-  { id: 5267, name: "Nói và nghe. Thuyết trình một vấn đề liên quan đến cơ hội và thách thức đối với đất nước", periods: 2 },
-  { id: 5268, name: "Đọc thực hành. Khúc đồng quê (Trích Cô bé nhìn mưa - Đặng Thị Hạnh)", periods: 1 },
+  {
+    "id": 5200,
+    "name": "Bài 1. Khả năng lớn lao của tiểu thuyết",
+    "periods": 10
+  },
+  {
+    "id": 5201,
+    "name": "Đọc: Xuân tóc đỏ cứu quốc (Trích Số đỏ - Vũ Trọng Phụng); Mùa lá rụng trong vườn (Trích Ma Văn Kháng)",
+    "periods": 5.5
+  },
+  {
+    "id": 5202,
+    "name": "Thực hành tiếng Việt: Biện pháp tu từ nói mỉa, nghịch ngữ",
+    "periods": 1
+  },
+  {
+    "id": 5203,
+    "name": "Viết: Viết bài văn nghị luận so sánh, đánh giá hai tác phẩm truyện",
+    "periods": 2
+  },
+  {
+    "id": 5204,
+    "name": "Nói và nghe: Trình bày kết quả so sánh, đánh giá hai tác phẩm truyện",
+    "periods": 1
+  },
+  {
+    "id": 5205,
+    "name": "Củng cố mở rộng - Thực hành đọc: Trên xuồng cứu nạn (Trích Cuộc đời của Pi)",
+    "periods": 0.5
+  },
+  {
+    "id": 5206,
+    "name": "Bài 2. Những thế giới thơ",
+    "periods": 10
+  },
+  {
+    "id": 5207,
+    "name": "Đọc: Cảm hoài (Đặng Dung); Tây tiến (Quang Dũng); Đàn ghi-ta của Lor-ca (Thanh Thảo)",
+    "periods": 5.5
+  },
+  {
+    "id": 5208,
+    "name": "Thực hành tiếng Việt: Tác dụng của một số biện pháp tu từ trong thơ",
+    "periods": 1
+  },
+  {
+    "id": 5209,
+    "name": "Viết: Viết bài văn nghị luận so sánh, đánh giá hai tác phẩm thơ",
+    "periods": 2
+  },
+  {
+    "id": 5210,
+    "name": "Nói và nghe: Trình bày kết quả so sánh, đánh giá hai tác phẩm thơ",
+    "periods": 1
+  },
+  {
+    "id": 5211,
+    "name": "Củng cố mở rộng - Thực hành đọc: Bài thơ số 28 (Ra-bin-đơ-ra-nát Ta-go)",
+    "periods": 0.5
+  },
+  {
+    "id": 5212,
+    "name": "Bài 3. Lập luận trong văn bản nghị luận",
+    "periods": 10
+  },
+  {
+    "id": 5213,
+    "name": "Đọc: Nhìn về vốn văn hóa dân tộc (Trần Đình Hượu); Năng lực sáng tạo (Phan Đình Diệu); Mấy ý nghĩ về thơ (Nguyễn Đình Thi)",
+    "periods": 5.5
+  },
+  {
+    "id": 5214,
+    "name": "Kiểm tra giữa học kì I",
+    "periods": 2
+  },
+  {
+    "id": 5215,
+    "name": "Thực hành tiếng Việt: Lỗi logic của câu; Lỗi câu mơ hồ",
+    "periods": 1
+  },
+  {
+    "id": 5216,
+    "name": "Viết: Viết bài văn nghị luận về một vấn đề liên quan đến tuổi trẻ (hoài bão, ước mơ)",
+    "periods": 2
+  },
+  {
+    "id": 5217,
+    "name": "Nói và nghe: Thuyết trình về một vấn đề liên quan đến tuổi trẻ",
+    "periods": 1
+  },
+  {
+    "id": 5218,
+    "name": "Củng cố mở rộng - Thực hành đọc: Cảm hứng và sáng tạo (Nguyễn Trần Bạt)",
+    "periods": 0.5
+  },
+  {
+    "id": 5219,
+    "name": "Trả bài kiêm tra giữa kì I",
+    "periods": 1
+  },
+  {
+    "id": 5220,
+    "name": "Bài 4. Yếu tố kì ảo trong truyện kể",
+    "periods": 9
+  },
+  {
+    "id": 5221,
+    "name": "Đọc: Hải khẩu linh từ (Đoàn Thị Điểm); Muối của rừng (Nguyễn Huy Thiệp)",
+    "periods": 4.5
+  },
+  {
+    "id": 5222,
+    "name": "Thực hành tiếng Việt: Nghệ thuật sử dụng điển cố trong tác phẩm văn học",
+    "periods": 1
+  },
+  {
+    "id": 5223,
+    "name": "Viết: Viết bài văn nghị luận về việc vay mượn – cải biến – sáng tạo trong một tác phẩm văn học",
+    "periods": 2
+  },
+  {
+    "id": 5224,
+    "name": "Nói và nghe: Trình bày về việc vay mượn – cải biến – sáng tạo trong một tác phẩm văn học",
+    "periods": 1
+  },
+  {
+    "id": 5225,
+    "name": "Củng cố mở rộng - Thực hành đọc: Bến trần gian (Lưu Sơn Minh)",
+    "periods": 0.5
+  },
+  {
+    "id": 5226,
+    "name": "Bài 5. Tiếng cười hài kịch",
+    "periods": 8
+  },
+  {
+    "id": 5227,
+    "name": "Đọc: Nhân vật quan trọng (Trích Quan thanh tra - Nikôlai Gôgôi); Giấu của (Trích Quẫn - Lộng Chương)",
+    "periods": 4.5
+  },
+  {
+    "id": 5228,
+    "name": "Viết: Viết báo cáo nghiên cứu về một vấn đề tự nhiên hoặc xã hội",
+    "periods": 2
+  },
+  {
+    "id": 5229,
+    "name": "Nói và nghe: Trình bày báo cáo kết quả nghiên cứu về một vấn đề tự nhiên hoặc xã hội",
+    "periods": 1
+  },
+  {
+    "id": 5230,
+    "name": "Củng cố mở rộng - Thực hành đọc: Cẩn thận hão (Trích Thợ cạo thành Xê-vin)",
+    "periods": 0.5
+  },
+  {
+    "id": 5231,
+    "name": "Ôn tập học kì I",
+    "periods": 1
+  },
+  {
+    "id": 5232,
+    "name": "Kiểm tra cuối học kì I",
+    "periods": 2
+  },
+  {
+    "id": 5233,
+    "name": "Trả bài cuối kỳ I",
+    "periods": 1
+  },
+  {
+    "id": 5234,
+    "name": "Bài 6. Hồ Chí Minh - \"Văn hoá phải soi đường cho quốc dân đi\"",
+    "periods": 11
+  },
+  {
+    "id": 5235,
+    "name": "Đọc: Tác gia Hồ Chí Minh; Tuyên ngôn độc lập; Mộ (Chiều tối); Nguyên tiêu (Rằm tháng giêng); Những trò lố hay là Va-ren và Phan Bội Châu",
+    "periods": 6
+  },
+  {
+    "id": 5236,
+    "name": "Thực hành tiếng Việt: Một số biện pháp làm tăng tính khẳng định, phủ định trong văn bản nghị luận",
+    "periods": 1
+  },
+  {
+    "id": 5237,
+    "name": "Viết: Viết báo cáo kết quả của bài tập dự án",
+    "periods": 2
+  },
+  {
+    "id": 5238,
+    "name": "Nói và nghe: Trình bày kết quả của bài tập dự án / Củng cố mở rộng - Thực hành đọc: Vọng nguyệt, Cảnh khuya",
+    "periods": 2
+  },
+  {
+    "id": 5239,
+    "name": "Bài 7. Sự thật trong tác phẩm kí",
+    "periods": 11
+  },
+  {
+    "id": 5240,
+    "name": "Đọc: Nghệ thuật băm thịt gà (Ngô Tất Tố); Bước vào đời (Đào Duy Anh)",
+    "periods": 6.5
+  },
+  {
+    "id": 5241,
+    "name": "Thực hành tiếng Việt: Ngôn ngữ trang trọng và ngôn ngữ thân mật",
+    "periods": 1
+  },
+  {
+    "id": 5242,
+    "name": "Viết: Viết bài văn nghị luận về một vấn đề liên quan đến tuổi trẻ (cách ứng xử trong mối quan hệ gia đình, xã hội)",
+    "periods": 2
+  },
+  {
+    "id": 5243,
+    "name": "Nói và nghe: Trình bày quan điểm về một vấn đề liên quan đến tuổi trẻ",
+    "periods": 1
+  },
+  {
+    "id": 5244,
+    "name": "Củng cố mở rộng - Thực hành đọc: Vĩ tuyến 17 (Xuân Phượng)",
+    "periods": 0.5
+  },
+  {
+    "id": 5245,
+    "name": "Kiểm tra giữa kì II",
+    "periods": 2
+  },
+  {
+    "id": 5246,
+    "name": "Bài 8. Dữ liệu trong văn bản thông tin",
+    "periods": 10
+  },
+  {
+    "id": 5247,
+    "name": "Đọc: Pa-ra-na; Giáo dục khai phóng ở Việt Nam nhìn từ Đông Kinh Nghĩa Thục; Đời muối",
+    "periods": 5.5
+  },
+  {
+    "id": 5248,
+    "name": "Trả bài giữa kì II",
+    "periods": 1
+  },
+  {
+    "id": 5249,
+    "name": "Thực hành tiếng Việt: Tôn trọng và bảo vệ quyền sở hữu trí tuệ",
+    "periods": 1
+  },
+  {
+    "id": 5250,
+    "name": "Viết: Viết thư trao đổi về công việc hoặc một vấn đề đáng quan tâm",
+    "periods": 2
+  },
+  {
+    "id": 5251,
+    "name": "Nói và nghe: Tranh biện về một vấn đề đời sống",
+    "periods": 1
+  },
+  {
+    "id": 5252,
+    "name": "Củng cố mở rộng - Thực hành đọc: Sách thay đổi lịch sử loài người",
+    "periods": 0.5
+  },
+  {
+    "id": 5253,
+    "name": "Bài 9. Văn học và cuộc đời",
+    "periods": 11
+  },
+  {
+    "id": 5254,
+    "name": "Đọc: Vội vàng (Xuân Diệu); Trở về (Ơ-nít Hê-minh-uê); Hồn Trương Ba, da hàng thịt (Lưu Quang Vũ)",
+    "periods": 6.5
+  },
+  {
+    "id": 5255,
+    "name": "Thực hành tiếng Việt: Giữ gìn và phát triển tiếng Việt; Cách giải thích nghĩa của từ",
+    "periods": 1
+  },
+  {
+    "id": 5256,
+    "name": "Viết: Viết bài phát biểu trong lễ phát động một phong trào hoặc một hoạt động xã hội",
+    "periods": 2
+  },
+  {
+    "id": 5257,
+    "name": "Nói và nghe: Thuyết trình về một vấn đề liên quan đến cơ hội và thử thách đối với đất nước",
+    "periods": 1
+  },
+  {
+    "id": 5258,
+    "name": "Củng cố mở rộng - Thực hành đọc: Khúc đồng quê (Đặng Thị Hạnh)",
+    "periods": 0.5
+  },
+  {
+    "id": 5259,
+    "name": "Ôn tập học kì II",
+    "periods": 2
+  },
+  {
+    "id": 5260,
+    "name": "Kiểm tra cuối học kỳ II",
+    "periods": 2
+  },
+  {
+    "id": 5261,
+    "name": "Trả bài kiểm tra cuối học kỳ II",
+    "periods": 1
+  },
+  {
+    "id": 5262,
+    "name": "Chuyên đề 1. Tập nghiên cứu và viết báo cáo về một vấn đề văn học hiện đại",
+    "periods": 10
+  },
+  {
+    "id": 5263,
+    "name": "Phần 1. Tìm hiểu một số hướng nghiên cứu văn học hiện đại",
+    "periods": 3
+  },
+  {
+    "id": 5264,
+    "name": "Phần 2. Viết báo cáo nghiên cứu về một vấn đề văn học hiện đại",
+    "periods": 4
+  },
+  {
+    "id": 5265,
+    "name": "Phần 3. Thuyết trình về kết quả của báo cáo nghiên cứu",
+    "periods": 3
+  },
+  {
+    "id": 5266,
+    "name": "Chuyên đề 2. Tìm hiểu về một tác phẩm nghệ thuật chuyển thể từ văn học",
+    "periods": 15
+  },
+  {
+    "id": 5267,
+    "name": "Phần 1. Thưởng thức một tác phẩm nghệ thuật được chuyển thể từ văn học",
+    "periods": 4
+  },
+  {
+    "id": 5268,
+    "name": "Phần 2. Viết bài phân tích, giới thiệu và thuyết trình về một tác phẩm nghệ thuật được chuyển thể từ văn học",
+    "periods": 7
+  },
+  {
+    "id": 5269,
+    "name": "Phần 3. Thực hành chuyển thể tác phẩm văn học",
+    "periods": 4
+  },
+  {
+    "id": 5270,
+    "name": "Chuyên đề 3. Tìm hiểu phong cách sáng tác của một trường phái văn học: Cổ điển, hiện thực hoặc lãng mạn",
+    "periods": 10
+  },
+  {
+    "id": 5271,
+    "name": "Phần 1. Tìm hiểu cách nghiên cứu phong cách sáng tác của một trường phái văn học",
+    "periods": 3
+  },
+  {
+    "id": 5272,
+    "name": "Phần 2. Viết bài giới thiệu về phong cách sáng tác của một trường phái văn học được thể hiện qua những tác phẩm cụ thể",
+    "periods": 4
+  },
+  {
+    "id": 5273,
+    "name": "Phần 3. Thuyết trình về phong cách sáng tác của một trường phái văn học",
+    "periods": 3
+  }
 ];
 
 
