@@ -102,6 +102,18 @@ export async function integrateNLS(content: string, subject: string, grade: stri
     throw new Error("API Key không tồn tại. Vui lòng kiểm tra cấu hình.");
   }
 
+  const isLiterature = subject === 'Ngữ văn';
+  const assessmentInstruction = isLiterature ? "" : `
+     4. Bổ sung mục "IV. KẾ HOẠCH ĐÁNH GIÁ":
+        - Việc kiểm tra, đánh giá khi tích hợp AI tập trung vào các biểu hiện tư duy, thái độ và kỹ năng thực hành:
+          * Kỹ năng tương tác, đặt câu hỏi (prompt) sâu sắc và hiệu quả cho AI.
+          * Năng lực phân tích, nhận diện thiên kiến và kiểm chứng thông tin do AI cung cấp.
+          * Khả năng lập luận, so sánh hợp lý giữa cách giải quyết của con người và máy móc.
+          * Sự cẩn trọng, thái độ sử dụng AI có trách nhiệm, trung thực, biết trích dẫn nguồn và không sao chép máy móc.
+  `;
+  const luyenTapSection = isLiterature ? "IV. HOẠT ĐỘNG LUYỆN TẬP" : "V. HOẠT ĐỘNG LUYỆN TẬP";
+  const vanDungSection = isLiterature ? "V. HOẠT ĐỘNG VẬN DỤNG" : "VI. HOẠT ĐỘNG VẬN DỤNG";
+
   const prompt = `
     Bạn là một chuyên gia giáo dục và Trợ lý Giáo viên cấp cao tại Việt Nam, am hiểu Công văn 5512, Thông tư 02/2025/TT-BGDĐT quy định Khung năng lực số cho người học (trong đó AI là miền năng lực thứ sáu), Quyết định 3439/QĐ-BGDĐT ban hành Khung nội dung thí điểm giáo dục Trí tuệ nhân tạo cho học sinh phổ thông và Công văn 8334/BGDĐT-GDPT hướng dẫn triển khai thực hiện thí điểm nội dung giáo dục Trí tuệ nhân tạo cho học sinh phổ thông.
     
@@ -156,12 +168,7 @@ export async function integrateNLS(content: string, subject: string, grade: stri
        - Thể hiện rõ các PHƯƠNG PHÁP và KỸ THUẬT DẠY HỌC TÍCH CỰC lồng ghép năng lực số (Kỹ thuật KWL, Áp dụng Brainstorming, Think-Pair-Share, Khăn trải bàn, Mảnh ghép, Trạm xoay, PBL - Học theo vấn đề, Tranh luận chuyên sâu, Bể cá (Fishbowl)... nhằm tối ưu hóa sự tương tác và hào hứng trong giờ học).
        - Thiết kế để dạy học tối ưu trên BẢNG TƯƠNG TÁC bằng việc lồng ghép thông minh các CÔNG CỤ TRỰC TUYẾN tương tác cao: Kahoot!, Quizizz, Blooket, Padlet, Mentimeter, v.v., khai thác tối đa tính năng tương tác của bảng thông minh có tại trường.
        - Thể hiện rõ Chu trình thực hành AI khi học sinh tương tác với AI: Học sinh tự học/làm trước -> AI hỗ trợ -> Học sinh đối chiếu, kiểm chứng chéo thông tin với nguồn học thuật/SGK và trích dẫn nguồn trung thực.
-    4. Bổ sung mục "IV. KẾ HOẠCH ĐÁNH GIÁ":
-       - Việc kiểm tra, đánh giá khi tích hợp AI tập trung vào các biểu hiện tư duy, thái độ và kỹ năng thực hành:
-         * Kỹ năng tương tác, đặt câu hỏi (prompt) sâu sắc và hiệu quả cho AI.
-         * Năng lực phân tích, nhận diện thiên kiến và kiểm chứng thông tin do AI cung cấp.
-         * Khả năng lập luận, so sánh hợp lý giữa cách giải quyết của con người và máy móc.
-         * Sự cẩn trọng, thái độ sử dụng AI có trách nhiệm, trung thực, biết trích dẫn nguồn và không sao chép máy móc.
+     ${assessmentInstruction}
 
         YÊU CẦU VỀ ĐỊNH DẠNG VÀ PHƯƠNG PHÁP CÁC MÔN XÃ HỘI & TIẾNG ANH:
      1. ĐỐI VỚI TIẾNG ANH (LANGUAGE & STRUCTURES):
@@ -170,7 +177,7 @@ export async function integrateNLS(content: string, subject: string, grade: stri
       2. ĐỐI VỚI NGỮ VĂN (LITERATURE & READING COMPREHENSION):
           - BẮT BUỘC dựa vào gợi ý hoạt động trong Sách giáo viên Ngữ văn lớp 10, lớp 11, lớp 12 (Bộ sách Kết nối tri thức với cuộc sống) để triển khai chi tiết cho các nội dung hoạt động cụ thể (Khởi động, Hình thành kiến thức, Luyện tập, Vận dụng) theo đúng cấu trúc Công văn 5512.
           - Các hoạt động học tập phát triển kỹ năng: Đọc văn bản, Thực hành tiếng Việt, Viết, Nói và Nghe trong KHBD phải bảo đảm biên soạn đúng theo các Yêu cầu cần đạt được quy định trong chương trình GDPT 2018 môn Ngữ văn đối với từng khối lớp tương ứng (đáp ứng đúng đặc trưng thể loại đọc hiểu, kiểu văn bản viết, và chuẩn kiến thức tiếng Việt, nói nghe).
-          - Ngoài ra, bắt buộc bổ sung/duy trì hai mục lớn "V. HOẠT ĐỘNG LUYỆN TẬP" và "VI. HOẠT ĐỘNG VẬN DỤNG" được thiết kế đầy đủ theo cấu trúc 4 phần của Công văn 5512 (a - Mục tiêu, b - Nội dung, c - Sản phẩm chi tiết, d - Tổ chức thực hiện dưới dạng bảng 2 cột). Trong đó, phần Luyện tập phải đa dạng hóa hình thức (viết kết nối đọc, thực hành ngôn ngữ, sơ đồ tư duy...), phần Vận dụng định hướng hành động (có thể sử dụng/chuyển hóa từ câu hỏi tự luận SGV); cả hai phần đều bám sát Sách giáo viên Ngữ văn 10, 11, 12 bộ Kết nối tri thức và bắt buộc cung cấp sản phẩm thực tế mẫu hoàn chỉnh cực kỳ chi tiết.
+          - Ngoài ra, bắt buộc bổ sung/duy trì hai mục lớn "${luyenTapSection}" và "${vanDungSection}" được thiết kế đầy đủ theo cấu trúc 4 phần của Công văn 5512 (a - Mục tiêu, b - Nội dung, c - Sản phẩm chi tiết, d - Tổ chức thực hiện dưới dạng bảng 2 cột). Trong đó, phần Luyện tập phải đa dạng hóa hình thức (viết kết nối đọc, thực hành ngôn ngữ, sơ đồ tư duy...), phần Vận dụng định hướng hành động (có thể sử dụng/chuyển hóa từ câu hỏi tự luận SGV); cả hai phần đều bám sát Sách giáo viên Ngữ văn 10, 11, 12 bộ Kết nối tri thức và bắt buộc cung cấp sản phẩm thực tế mẫu hoàn chỉnh cực kỳ chi tiết.
          - Cột "Sản phẩm dự kiến" PHẢI tạo ra sản phẩm hoàn chỉnh cực kỳ chi tiết (viết ra đoạn văn hoàn chỉnh mẫu, dàn ý chi tiết mẫu, điền đầy đủ nội dung bảng so sánh và phân tích, các câu trả lời đầy đủ), tuyệt đối không chỉ ghi tiêu đề hoặc ghi qua loa đại khái.
          - Trích dẫn các đoạn thơ, đoạn văn mẫu hoặc ngữ liệu văn học rõ ràng, căn lề thụt lề chuẩn.
          - Tích hợp AI trong việc phân tích cấu trúc văn bản, tóm tắt ý chính, nhận diện biện pháp nghệ thuật, hoặc tạo lập văn bản theo phong cách khác nhau.
@@ -242,6 +249,15 @@ export async function generateLessonPlan(lessonName: string, periods: number, su
     throw new Error("API Key không tồn tại. Vui lòng kiểm tra cấu hình.");
   }
 
+  const isLiterature = subject === 'Ngữ văn';
+  const assessmentPromptPart = isLiterature ? "" : `
+    IV. KẾ HOẠCH ĐÁNH GIÁ (nếu có)
+    - Xây dựng tiêu chí đánh giá tích hợp AI: kỹ năng tương tác prompt, kiểm chứng dữ liệu, phản biện thiên kiến, thái độ chịu trách nhiệm và trích dẫn trung thực.
+  `;
+  const luyenTapHeader = isLiterature ? "IV. HOẠT ĐỘNG LUYỆN TẬP" : "V. HOẠT ĐỘNG LUYỆN TẬP";
+  const vanDungHeader = isLiterature ? "V. HOẠT ĐỘNG VẬN DỤNG" : "VI. HOẠT ĐỘNG VẬN DỤNG";
+  const phieuHocTapHeader = isLiterature ? "VI. CÁC PHIẾU HỌC TẬP" : "VII. CÁC PHIẾU HỌC TẬP";
+
   const prompt = `
     Bạn là một chuyên gia giáo dục và Trợ lý Giáo viên cấp cao tại Việt Nam, am hiểu Công văn 5512, Thông tư 02/2025/TT-BGDĐT quy định Khung năng lực số cho người học (trong đó AI là miền năng lực thứ sáu), Quyết định 3439/QĐ-BGDĐT ban hành Khung nội dung thí điểm giáo dục Trí tuệ nhân tạo cho học sinh phổ thông và Công văn 8334/BGDĐT-GDPT hướng dẫn triển khai thực hiện thí điểm nội dung giáo dục Trí tuệ nhân tạo cho học sinh phổ thông.
 
@@ -308,10 +324,9 @@ export async function generateLessonPlan(lessonName: string, periods: number, su
            | **Bước 1: Chuyển giao nhiệm vụ học tập** <br> GV giao nhiệm vụ học tập rõ ràng, nêu yêu cầu, thời gian, học liệu số và hình thức làm việc. Nêu cách GV sử dụng bảng tương tác hoặc các công cụ trực tuyến (Kahoot!, Quizizz, Blooket, Padlet, Mentimeter...) để khởi động hoặc giao nhiệm vụ học tập. <br><br> **Bước 2: Thực hiện nhiệm vụ** <br> HS thực hiện nhiệm vụ (cá nhân/cặp/nhóm); GV theo dõi, hỗ trợ. [BẮT BUỘC Tích hợp NLS và AI: Mô tả HS dùng công cụ số/AI để tra cứu dữ liệu, tương tác prompt, kiểm chứng thông tin với mã năng lực số NC1 và mã AI chi tiết (10.A1b, 11.C2a, 12.D2b...) viết dưới dạng văn bản thường không chứa dấu nháy ngược]. <br><br> **Bước 3: Báo cáo kết quả và thảo luận** <br> HS trả lời câu hỏi. <br> Gv quan sát, hỗ trợ, tư vấn <br> HS báo cáo kết quả thông qua các sản phẩm số, phản hồi/trình bày trực tiếp trên bảng tương tác hoặc qua ứng dụng trực tuyến (như đăng sản phẩm lên Padlet, trả lời trên Mentimeter, thảo luận nhóm qua bảng thông minh); HS nhóm khác phản biện, thảo luận; GV điều hành. <br><br> **Bước 4: Nhận xét, đánh giá kết quả thực hiện nhiệm vụ** <br> GV: nhận xét đánh giá kết quả của các cá nhân, chuẩn hóa kiến thức. GV nhận xét, đánh giá tinh thần làm việc và sản phẩm của học sinh, chuẩn hóa kiến thức cốt lõi và chuyển giao nhiệm vụ tiếp theo. | [Đưa ra đáp án chi tiết, kết quả thực hiện bài tập, nội dung bảng biểu đã hoàn thành, viết trực tiếp đoạn văn mẫu đầy đủ, bài viết phân tích dài, hoặc câu trả lời rất chi tiết cho các yêu cầu ở cột bên trái để chốt kiến thức...] |
       - QUY TẮC BẮT BUỘC TRONG BẢNG: Trong cột "Hoạt động của GV và HS" và "Sản phẩm dự kiến", sau mỗi câu hoặc sau mỗi ý hành động lớn, bạn PHẢI tự động xuống hàng bằng cách chèn thẻ <br> ở cuối để phân tách rõ ràng các ý, giúp giáo viên dễ đọc. Tuyệt đối không viết liền tù tì thành một đoạn dài.
  
-    IV. KẾ HOẠCH ĐÁNH GIÁ (nếu có)
-    - Xây dựng tiêu chí đánh giá tích hợp AI: kỹ năng tương tác prompt, kiểm chứng dữ liệu, phản biện thiên kiến, thái độ chịu trách nhiệm và trích dẫn trung thực.
+     ${assessmentPromptPart}
 
-    V. HOẠT ĐỘNG LUYỆN TẬP
+     ${luyenTapHeader}
     - Hoạt động luyện tập phải được thiết kế và triển khai đầy đủ theo cấu trúc 4 phần của Công văn 5512:
       a) Mục tiêu: Xác định rõ yêu cầu kiến thức/kỹ năng cần đạt của hoạt động luyện tập.
       b) Nội dung: Giao nhiệm vụ, bài tập cụ thể cho học sinh (đa dạng hóa hình thức luyện tập như thực hành ngôn ngữ, viết sáng tạo, viết kết nối với đọc, sơ đồ tư duy... dựa vào gợi ý hoạt động trong Sách giáo viên Ngữ văn lớp 10, 11, 12 bộ Kết nối tri thức với cuộc sống).
