@@ -1433,26 +1433,6 @@ export default function App() {
             <div className="section-title text-base mb-6">Cấu hình hệ thống</div>
             
             <div className="space-y-6">
-              <div className="flex p-1 bg-slate-100 rounded-lg mb-4">
-                <button 
-                  onClick={() => { setMode('integrate'); setResult(null); }}
-                  className={cn(
-                    "flex-1 py-2 text-xs font-bold rounded-md transition-all",
-                    mode === 'integrate' ? "bg-white shadow-sm text-prof-blue-primary" : "text-slate-500 hover:text-slate-700"
-                  )}
-                >
-                  Tích hợp file
-                </button>
-                <button 
-                  onClick={() => { setMode('generate'); setResult(null); }}
-                  className={cn(
-                    "flex-1 py-2 text-xs font-bold rounded-md transition-all",
-                    mode === 'generate' ? "bg-white shadow-sm text-prof-blue-primary" : "text-slate-500 hover:text-slate-700"
-                  )}
-                >
-                  Tạo mới KHBD
-                </button>
-              </div>
 
               <div className="form-group">
                 <label className="block text-[13px] font-bold text-prof-slate-label mb-2 uppercase tracking-wider">Môn học</label>
