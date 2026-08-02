@@ -175,6 +175,9 @@ export async function integrateNLS(content: string, subject: string, grade: stri
         - Các bảng từ vựng (Vocabulary), cấu trúc (Structures) phải rõ ràng, phân biệt rõ cột Từ/Cụm từ, Từ loại, Phiên âm, Nghĩa và Câu ví dụ.
         - Tích hợp các công cụ luyện phát âm AI (như Elsa Speak), chatbot AI đóng vai (role-play), hoặc công cụ sửa lỗi ngữ pháp.
       2. ĐỐI VỚI NGỮ VĂN (LITERATURE & READING COMPREHENSION):
+          - Khi biên soạn KHBD liên quan đến Kỹ năng đọc hiểu văn bản, bạn bắt buộc phải tham khảo 02 nguồn tài liệu theo thứ tự ưu tiên sau:
+            + Thứ nhất: Sách Giáo Viên (SGV) Ngữ văn lớp 10, lớp 11, lớp 12 (bộ sách Kết nối tri thức với cuộc sống).
+            + Thứ hai: Các giáo án lớp 10, lớp 11, lớp 12 trong thư mục "MON NGU VAN-NEW".
           - BẮT BUỘC dựa vào gợi ý hoạt động trong Sách giáo viên Ngữ văn lớp 10, lớp 11, lớp 12 (Bộ sách Kết nối tri thức với cuộc sống) để triển khai chi tiết cho các nội dung hoạt động cụ thể (Khởi động, Hình thành kiến thức, Luyện tập, Vận dụng) theo đúng cấu trúc Công văn 5512.
           - Các hoạt động học tập phát triển kỹ năng: Đọc văn bản, Thực hành tiếng Việt, Viết, Nói và Nghe trong KHBD phải bảo đảm biên soạn đúng theo các Yêu cầu cần đạt được quy định trong chương trình GDPT 2018 môn Ngữ văn đối với từng khối lớp tương ứng (đáp ứng đúng đặc trưng thể loại đọc hiểu, kiểu văn bản viết, và chuẩn kiến thức tiếng Việt, nói nghe).
           - Ngoài ra, bắt buộc bổ sung/duy trì hai mục lớn "${luyenTapSection}" và "${vanDungSection}" được thiết kế đầy đủ theo cấu trúc 4 phần của Công văn 5512 (a - Mục tiêu, b - Nội dung, c - Sản phẩm chi tiết, d - Tổ chức thực hiện dưới dạng bảng 2 cột). Trong đó, phần Luyện tập phải đa dạng hóa hình thức (viết kết nối đọc, thực hành ngôn ngữ, sơ đồ tư duy...), phần Vận dụng định hướng hành động (có thể sử dụng/chuyển hóa từ câu hỏi tự luận SGV); cả hai phần đều bám sát Sách giáo viên Ngữ văn 10, 11, 12 bộ Kết nối tri thức và bắt buộc cung cấp sản phẩm thực tế mẫu hoàn chỉnh cực kỳ chi tiết.
@@ -270,6 +273,11 @@ export async function generateLessonPlan(lessonName: string, periods: number, su
   if (isLiterature) {
     if (isDoc) {
       skillSpecificPrompt = `
+    NGUỒN THAM KHẢO VÀ THỨ TỰ ƯU TIÊN KHI BIÊN SOẠN KỸ NĂNG ĐỌC HIỂU VĂN BẢN:
+    - Khi biên soạn KHBD liên quan đến Kỹ năng đọc hiểu văn bản, bạn bắt buộc phải tham khảo 02 nguồn tài liệu theo thứ tự ưu tiên sau:
+      + Thứ nhất: Sách Giáo Viên (SGV) Ngữ văn lớp 10, lớp 11, lớp 12 (bộ sách Kết nối tri thức với cuộc sống).
+      + Thứ hai: Các giáo án lớp 10, lớp 11, lớp 12 trong thư mục "MON NGU VAN-NEW".
+
     HÌNH THỨC TRÌNH BÀY ĐỀ MỤC BẮT BUỘC ĐỐI VỚI TIẾT DẠY LIÊN QUAN KỸ NĂNG ĐỌC HIỂU VĂN BẢN (DỰA THEO HÌNH THỨC CỦA FILE "KHBD  DOC VAN BAN.pdf"):
     Trong mục "III. TIẾN TRÌNH DẠY HỌC", cấu trúc các hoạt động và đề mục phải được trình bày chính xác như sau:
     
@@ -456,6 +464,9 @@ export async function generateLessonPlan(lessonName: string, periods: number, su
        - Các bảng từ vựng (Vocabulary), cấu trúc (Structures) phải rõ ràng, phân biệt rõ cột Từ/Cụm từ, Từ loại, Phiên âm, Nghĩa và Câu ví dụ.
        - Tích hợp các công cụ luyện phát âm AI (như Elsa Speak), chatbot AI đóng vai (role-play), hoặc công cụ sửa lỗi ngữ pháp.
      2. ĐỐI VỚI NGỮ VĂN (LITERATURE & READING COMPREHENSION):
+        - Khi biên soạn KHBD liên quan đến Kỹ năng đọc hiểu văn bản, bạn bắt buộc phải tham khảo 02 nguồn tài liệu theo thứ tự ưu tiên sau:
+          + Thứ nhất: Sách Giáo Viên (SGV) Ngữ văn lớp 10, lớp 11, lớp 12 (bộ sách Kết nối tri thức với cuộc sống).
+          + Thứ hai: Các giáo án lớp 10, lớp 11, lớp 12 trong thư mục "MON NGU VAN-NEW".
         - BẮT BUỘC dựa vào gợi ý hoạt động trong Sách giáo viên Ngữ văn lớp 10, lớp 11, lớp 12 (Bộ sách Kết nối tri thức với cuộc sống) để triển khai chi tiết cho các nội dung hoạt động cụ thể (Khởi động, Hình thành kiến thức, Luyện tập, Vận dụng) theo đúng cấu trúc Công văn 5512.
         - Các hoạt động học tập phát triển kỹ năng: Đọc văn bản, Thực hành tiếng Việt, Viết, Nói và Nghe trong KHBD phải bảo đảm biên soạn đúng theo các Yêu cầu cần đạt được quy định trong chương trình GDPT 2018 môn Ngữ văn đối với từng khối lớp tương ứng (đáp ứng đúng đặc trưng thể loại đọc hiểu, kiểu văn bản viết, và chuẩn kiến thức tiếng Việt, nói nghe).
         - Cột "Sản phẩm dự kiến" PHẢI tạo ra sản phẩm hoàn chỉnh cực kỳ chi tiết (viết ra đoạn văn hoàn chỉnh mẫu, dàn ý chi tiết mẫu, điền đầy đủ nội dung bảng so sánh và phân tích, các câu trả lời đầy đủ), tuyệt đối không chỉ ghi tiêu đề hoặc ghi qua loa đại khái.
