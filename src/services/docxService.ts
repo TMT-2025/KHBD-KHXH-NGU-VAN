@@ -797,26 +797,23 @@ export async function generateDocx(content: string, fileName: string, periods?: 
     let contentPart: string = text;
 
     // Detect markdown headings
-    if (text.startsWith('# ')) {
-      heading = HeadingLevel.HEADING_1 as "Heading1";
-      text = text.replace(/^#+\s*/, '');
-      contentPart = text;
-      bold = true;
-    } else if (text.startsWith('## ')) {
-      heading = HeadingLevel.HEADING_2 as "Heading2";
-      text = text.replace(/^#+\s*/, '');
-      contentPart = text;
-      bold = true;
-    } else if (text.startsWith('### ')) {
-      heading = HeadingLevel.HEADING_3 as "Heading3";
-      text = text.replace(/^#+\s*/, '');
-      contentPart = text;
-      bold = true;
-    } else if (text.startsWith('#### ')) {
-      // Treating #### as bold section but not a word heading to keep text size consistent
-      text = text.replace(/^#+\s*/, '');
-      contentPart = text;
-      bold = true;
+    if (text.startsWith('#')) {
+      const headingMatch = text.match(/^(#+)\s*(.*)/);
+      if (headingMatch) {
+        const hashes = headingMatch[1];
+        const headingText = headingMatch[2];
+        text = headingText;
+        contentPart = headingText;
+        bold = true;
+        
+        if (hashes.length === 1) {
+          heading = HeadingLevel.HEADING_1 as "Heading1";
+        } else if (hashes.length === 2) {
+          heading = HeadingLevel.HEADING_2 as "Heading2";
+        } else if (hashes.length === 3) {
+          heading = HeadingLevel.HEADING_3 as "Heading3";
+        }
+      }
     }
 
     // Tiết X (Centered, Bold, Upper)
