@@ -140,7 +140,7 @@ export async function integrateNLS(content: string, subject: string, grade: stri
          * Phương án triển khai: Học sinh sẽ thực hành sử dụng công cụ AI trực tiếp hay chỉ thảo luận thông qua các tình huống giả định (case study).
          * Học liệu/công cụ cụ thể: Liệt kê rõ tên phần mềm, nền tảng ứng dụng AI sẽ sử dụng (ví dụ: Google AI Studio, Gemini, Canva AI, Teachable Machine...), hoặc các bài báo, video phân tích, ảnh chụp màn hình, tình huống giả định đã chuẩn bị sẵn.
     3. Trong "III. TIẾN TRÌNH DẠY HỌC":
-       - PHÂN BỔ TIẾT HỌC: Nếu KHBD gốc có nhiều tiết, hãy chia rõ nội dung cho từng tiết. Mỗi tiết bắt đầu bằng tiêu đề dòng riêng: **TIẾT X: [NỘI DUNG KIẾN THỨC BÀI HỌC]** (viết hoa, in đậm, căn giữa). 
+       - PHÂN BỔ TIẾT HỌC: Nếu KHBD gốc có nhiều tiết, hãy chia rõ nội dung cho từng tiết. Mỗi tiết bắt đầu bằng tiêu đề dòng riêng: **TIẾT X: [NỘI DUNG KIẾN THỨC BÀI HỌC]** (hãy viết hoa toàn bộ tên bài học và in đậm, tuyệt đối không được ghi thêm các chú thích kiểu "(căn giữa, viết hoa, in đậm)" hay "(viết hoa, in đậm, căn giữa)" vào văn bản). 
        - QUY TẮC BẮT BUỘC CHO NHIỀU TIẾT: Đối với bài dạy nhiều tiết (ví dụ: bài học 2, 3, 4 tiết, hay thậm chí 11, 12, 15 tiết...), bạn phải thực hiện thiết kế chi tiết tất cả các hoạt động cho từng tiết. TUYỆT ĐỐI không tóm tắt sơ sài hay gom cụm các tiết sau. TẤT CẢ các hoạt động học ở tất cả các tiết (từ Tiết 1 đến Tiết cuối cùng) đều PHẢI ĐƯỢC THIẾT KẾ ĐẦY ĐỦ VÀ CHI TIẾT THEO CẤU TRÚC 4 PHẦN (a, b, c, d) DƯỚI ĐÂY.
         - CẤM TÓM TẮT HOẶC VIẾT GHI CHÚ LƯỢC BỚT: NGHIÊM CẤM TUYỆT ĐỐI việc viết các câu lược trích hoặc để ghi chú trống bằng tiếng Việt như: "(Do giới hạn dung lượng, tôi xin lược trích...)", "(Lưu ý: Giáo viên cần tự điều chỉnh thời lượng...)", hoặc bất kỳ câu nào khuyên giáo viên tự điền. Bạn BẮT BUỘC phải viết chi tiết đầy đủ 100% tất cả các tiết học từ Tiết 1 đến Tiết cuối cùng.
        - Đảm bảo thiết kế các hoạt động chi tiết cực kỳ chuẩn chỉ bám sát CV5512, thể hiện đầy đủ các mục cho TẤT CẢ các hoạt động trong mọi tiết học:
@@ -214,6 +214,8 @@ export async function integrateNLS(content: string, subject: string, grade: stri
     YÊU CẦU QUY TẮC ĐỊNH DẠNG KHÁC:
     - Mọi nội dung NLS và AI được bổ sung thêm PHẢI được bao bọc trong cặp thẻ <nls> và </nls> (ví dụ: <nls>- Năng lực 1.2: ...</nls> hoặc <nls>[Tích hợp giáo dục AI (NLa): ...]</nls>).
     - Giữ nguyên các nội dung chuyên môn gốc của bài dạy.
+    - TUYỆT ĐỐI KHÔNG sử dụng ký hiệu 5 hoặc 6 dấu thăng ("#####" hoặc "######") trong toàn bộ văn bản.
+    - TUYỆT ĐỐI KHÔNG ghi các từ chú thích định dạng như "(Căn giữa, viết hoa, in đậm)", "(viết hoa, in đậm, căn giữa)", hoặc bất kỳ chỉ dẫn định dạng nào khác vào nội dung bài dạy.
 
     Nội dung gốc:
     ${content}
@@ -397,7 +399,7 @@ export async function generateLessonPlan(lessonName: string, periods: number, su
       Ví dụ mẫu chuẩn:
       * TIẾT 1: KHỞI ĐỘNG CHUNG CHO CỤM BÀI HỌC. ĐỌC - HIỂU VĂN BẢN XUÂN TÓC ĐỎ CỨU QUỐC (BỐI CẢNH LỊCH SỬ - XÃ HỘI, TÁC GIẢ VŨ TRỌNG PHỤNG, THỂ LOẠI TIỂU THUYẾT TRÀO PHÚNG, CỐT TRUYỆN VÀ NHÂN VẬT XUÂN TÓC ĐỎ).
       * TIẾT 2: ĐỌC - HIỂU VĂN BẢN XUÂN TÓC ĐỎ CỨU QUỐC (NGHỆ THUẬT TRÀO PHÚNG, CÁC NHÂN VẬT PHỤ BIẾM HỌA, THÁI ĐỘ PHÊ PHÁN CỦA NHÀ VĂN).
-    - Mỗi tiết học khi đi vào chi tiết bên dưới vẫn bắt đầu bằng tiêu đề dòng riêng: **TIẾT X: [NỘI DUNG KIẾN THỨC BÀI HỌC]** (viết hoa, in đậm, căn giữa). 
+    - Mỗi tiết học khi đi vào chi tiết bên dưới vẫn bắt đầu bằng tiêu đề dòng riêng: **TIẾT X: [NỘI DUNG KIẾN THỨC BÀI HỌC]** (hãy viết hoa toàn bộ tên bài học và in đậm, tuyệt đối không được ghi thêm các chú thích kiểu "(căn giữa, viết hoa, in đậm)" hay "(viết hoa, in đậm, căn giữa)" vào văn bản). 
     - QUY TẮC BẮT BUỘC CHO NHIỀU TIẾT: Đối với bài học thiết kế cho nhiều tiết (ví dụ: bài học 2, 3, 4 tiết, hay thậm chí 11, 12, 15 tiết...), bạn phải thực hiện thiết kế chi tiết tất cả các hoạt động cho từng tiết. TUYỆT ĐỐI không tóm tắt sơ sài hay gom cụm các tiết sau. TẤT CẢ các hoạt động học ở tất cả các tiết (từ Tiết 1 đến Tiết cuối cùng) đều PHẢI ĐƯỢC THIẾT KẾ ĐẦY ĐỦ VÀ CHI TIẾT THEO CẤU TRÚC 4 PHẦN (a, b, c, d) DƯỚI ĐÂY.
     - CẤM TÓM TẮT HOẶC VIẾT GHI CHÚ LƯỢC BỚT: NGHIÊM CẤM TUYỆT ĐỐI việc viết các câu lược trích hoặc để ghi chú trống bằng tiếng Việt như: "(Do giới hạn dung lượng, tôi xin lược trích...)", "(Lưu ý: Giáo viên cần tự điều chỉnh thời lượng...)", hoặc bất kỳ câu nào gợi ý giáo viên tự điền. Bạn BẮT BUỘC phải phân chia các hoạt động phù hợp (ví dụ: chia thành 4-5 hoạt động lớn phủ đều các nhóm tiết như Hoạt động 1: Tiết 1-2, Hoạt động 2: Tiết 3-5, Hoạt động 3: Tiết 6-8, Hoạt động 4: Tiết 9-11) và viết chi tiết đầy đủ 100% tất cả các tiết học từ Tiết 1 đến Tiết cuối cùng để phủ kín toàn bộ ${periods} tiết học của bài học.
     - Hoạt động 1 (của Tiết 1) PHẢI là hoạt động khởi động bám sát các kĩ thuật khơi gợi cảm xúc, bối cảnh, thẩm mĩ và kết nối trải nghiệm đặc thù của môn Ngữ văn phù hợp với thể loại văn bản (Không kiểm tra bài cũ). Tránh lạm dụng các công cụ tương tác số như Kahoot!, Mentimeter... nếu chúng làm giảm tính nghệ thuật và sự đồng cảm với tác phẩm.
@@ -489,10 +491,12 @@ export async function generateLessonPlan(lessonName: string, periods: number, su
        - Sử dụng các case study thực tế (luật pháp, kinh tế), dữ liệu thị trường biến động.
        - Hướng dẫn học sinh sử dụng AI để tóm tắt các điều luật phức tạp hoặc phân tích tình huống pháp lý giả định (case study).
 
-    LƯU Ý QUÂN TRỌNG:
+    LƯU Ý QUAN TRỌNG:
     - Mọi nội dung NLS và giáo dục AI được bổ sung thêm PHẢI được bao bọc trong cặp thẻ <nls> và </nls>.
     - Không viết tắt tự ý ngoài các thuật ngữ chuẩn và mã hóa năng lực trong hướng dẫn.
     - Trả về toàn bộ nội dung giáo án hoàn chỉnh, phong phú và chi tiết.
+    - TUYỆT ĐỐI KHÔNG sử dụng ký hiệu 5 hoặc 6 dấu thăng ("#####" hoặc "######") trong toàn bộ văn bản.
+    - TUYỆT ĐỐI KHÔNG ghi các từ chú thích định dạng như "(Căn giữa, viết hoa, in đậm)", "(viết hoa, in đậm, căn giữa)", hoặc bất kỳ chỉ dẫn định dạng nào khác vào nội dung bài dạy.
   `;
 
   const timeoutPromise = new Promise<never>((_, reject) => 
