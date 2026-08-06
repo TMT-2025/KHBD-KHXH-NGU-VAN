@@ -1390,11 +1390,47 @@ export default function App() {
       return;
     }
 
-    // Nhập TMT_ADMIN_2026 nhận được lượt tải vĩnh viễn (9999 lượt, gói pro)
-    if (key === 'TMT_ADMIN_2026') {
-      setCredits(9999);
+    // Nhập mã ADMIN_1, ADMIN_2, ADMIN_3 để kích hoạt nhanh các gói
+    if (key === 'ADMIN_1') {
+      const oldCredits = tier === 'free' ? 0 : credits;
+      const nextCredits = oldCredits + 5;
+      setCredits(nextCredits);
+      setTier('vip');
+      localStorage.setItem('khbd_credits', nextCredits.toString());
+      localStorage.setItem('khbd_tier', 'vip');
+      setActivationSuccess(true);
+      setActivationKeyInput('');
+      setActivationError(null);
+      setTimeout(() => {
+        setShowPaywall(false);
+        setActivationSuccess(false);
+      }, 2500);
+      return;
+    }
+
+    if (key === 'ADMIN_2') {
+      const oldCredits = tier === 'free' ? 0 : credits;
+      const nextCredits = oldCredits + 15;
+      setCredits(nextCredits);
+      setTier('vip');
+      localStorage.setItem('khbd_credits', nextCredits.toString());
+      localStorage.setItem('khbd_tier', 'vip');
+      setActivationSuccess(true);
+      setActivationKeyInput('');
+      setActivationError(null);
+      setTimeout(() => {
+        setShowPaywall(false);
+        setActivationSuccess(false);
+      }, 2500);
+      return;
+    }
+
+    if (key === 'ADMIN_3') {
+      const oldCredits = tier === 'free' ? 0 : credits;
+      const nextCredits = oldCredits + 40;
+      setCredits(nextCredits);
       setTier('pro');
-      localStorage.setItem('khbd_credits', '9999');
+      localStorage.setItem('khbd_credits', nextCredits.toString());
       localStorage.setItem('khbd_tier', 'pro');
       setActivationSuccess(true);
       setActivationKeyInput('');
