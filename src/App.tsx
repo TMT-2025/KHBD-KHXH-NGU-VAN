@@ -1707,7 +1707,7 @@ export default function App() {
 - Thí nghiệm: Thí nghiệm khám phá, mô hình hóa phân tử.
 
 2. Tích hợp Năng lực số (NLS) và Giáo dục AI:
-- Mã chỉ báo chuẩn NC1 theo Thông tư 02/2025/TT-BGDĐT, Quyết định 3439/QĐ-BGDĐT và Công văn 8334/BGDĐT-GDPT.
+- Mã chỉ báo chuẩn NC1 theo Thông tư 18/2026/TT-BGDĐT, Quyết định số 2422/QĐ-BGDĐT và Công văn số 5588/BGDĐT-GDPT.
 - Sử dụng công cụ trực tuyến: Kahoot!, Quizizz, Blooket, Padlet, Mentimeter khai thác tối đa bảng tương tác.
 - Hoạt động 1: Luôn là hoạt động khởi động vui tươi, không kiểm tra bài cũ.
 
@@ -1723,7 +1723,7 @@ export default function App() {
         <div>
           <h1 className="text-2xl font-bold tracking-tight">Biên soạn Kế hoạch Bài dạy (KHBD) Tích hợp NLS & Giáo dục AI</h1>
           <p className="text-[11px] opacity-80 uppercase tracking-widest mt-1 font-medium">
-            Hệ thống tích hợp Năng lực số & Giáo dục AI — Theo TT 02/2025/TT-BGDĐT, CV 5512, Quyết định 3439/QĐ-BGDĐT & Công văn 8334/BGDĐT-GDPT
+            Hệ thống tích hợp Năng lực số & Giáo dục AI — Theo TT 18/2026/TT-BGDĐT, CV 5512, Quyết định số 2422/QĐ-BGDĐT & Công văn số 5588/BGDĐT-GDPT
           </p>
         </div>
         <div className="flex items-center gap-3">
@@ -1877,9 +1877,9 @@ export default function App() {
                 <label className="block text-[13px] font-bold text-prof-slate-label mb-2 uppercase tracking-wider">Tiêu chuẩn tích hợp</label>
                 <div className="flex flex-wrap gap-1">
                   <span className="ref-badge px-3 py-1.5 text-[10px]">CV 5512</span>
-                  <span className="ref-badge px-3 py-1.5 text-[10px]">TT 02/2025</span>
-                  <span className="ref-badge px-3 py-1.5 text-[10px]">QĐ 3439/QĐ-BGDĐT</span>
-                  <span className="ref-badge px-3 py-1.5 text-[10px]">CV 8334/BGDĐT-GDPT</span>
+                  <span className="ref-badge px-3 py-1.5 text-[10px]">TT 18/2026</span>
+                  <span className="ref-badge px-3 py-1.5 text-[10px]">QĐ 2422/QĐ-BGDĐT</span>
+                  <span className="ref-badge px-3 py-1.5 text-[10px]">CV 5588/BGDĐT-GDPT</span>
                 </div>
               </div>
 

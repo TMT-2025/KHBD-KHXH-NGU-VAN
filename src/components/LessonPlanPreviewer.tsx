@@ -518,7 +518,7 @@ export default function LessonPlanPreviewer({
           <div className="border-b-2 border-slate-800 pb-4 mb-6">
             <div className="flex justify-between text-xs text-slate-500 uppercase tracking-widest font-semibold font-sans">
               <span>Học liệu số & Thiết kế AI</span>
-              <span>CV 5512, TT 02/2025, QĐ 3439 & CV 8334</span>
+              <span>CV 5512, TT 18/2026, QĐ 2422 & CV 5588</span>
             </div>
           </div>
 
