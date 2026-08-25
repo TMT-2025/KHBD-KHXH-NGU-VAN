@@ -102,25 +102,25 @@ export async function integrateNLS(content: string, subject: string, grade: stri
     throw new Error("API Key không tồn tại. Vui lòng kiểm tra cấu hình.");
   }
 
-  const isLiterature = subject === 'Ngữ văn';
-  const assessmentInstruction = isLiterature ? "" : `
+  const assessmentInstruction = `
      4. Bổ sung mục "IV. KẾ HOẠCH ĐÁNH GIÁ":
-        - Việc kiểm tra, đánh giá khi tích hợp AI tập trung vào các biểu hiện tư duy, thái độ và kỹ năng thực hành:
-          * Kỹ năng tương tác, đặt câu hỏi (prompt) sâu sắc và hiệu quả cho AI.
-          * Năng lực phân tích, nhận diện thiên kiến và kiểm chứng thông tin do AI cung cấp.
-          * Khả năng lập luận, so sánh hợp lý giữa cách giải quyết của con người và máy móc.
-          * Sự cẩn trọng, thái độ sử dụng AI có trách nhiệm, trung thực, biết trích dẫn nguồn và không sao chép máy móc.
+        - Việc kiểm tra, đánh giá khi tích hợp AI tập trung vào đánh giá quá trình (Process-based assessment) và năng lực tư duy thực chất của học sinh thông qua các biểu hiện:
+          * Kỹ năng tương tác: Cách đặt câu hỏi, tinh chỉnh prompt hiệu quả cho AI.
+          * Kỹ năng kiểm chứng: Khả năng phát hiện lỗi sai, thiên kiến hoặc ảo giác thông tin (hallucination) của AI bằng cách đối chiếu với nguồn dữ liệu chính thống.
+          * Sử dụng có trách nhiệm: Ý thức tự giác khai báo mức độ sử dụng AI, trích dẫn nguồn học liệu hợp pháp và không đạo văn (ví dụ: trích dẫn AI như một Collaborator).
   `;
-  const luyenTapSection = isLiterature ? "IV. HOẠT ĐỘNG LUYỆN TẬP" : "V. HOẠT ĐỘNG LUYỆN TẬP";
-  const vanDungSection = isLiterature ? "V. HOẠT ĐỘNG VẬN DỤNG" : "VI. HOẠT ĐỘNG VẬN DỤNG";
+  const luyenTapSection = "V. HOẠT ĐỘNG LUYỆN TẬP";
+  const vanDungSection = "VI. HOẠT ĐỘNG VẬN DỤNG";
 
   const prompt = `
     Bạn là một chuyên gia giáo dục và Trợ lý Giáo viên cấp cao tại Việt Nam, am hiểu Công văn 5512, Thông tư 18/2026/TT-BGDĐT quy định Khung năng lực số cho người học (trong đó AI là miền năng lực thứ sáu), Quyết định số 2422/QĐ-BGDĐT ngày 18/08/2026 ban hành Khung giáo dục AI và Công văn số 5588/BGDĐT-GDPT ngày 19/08/2026 hướng dẫn triển khai thực hiện giáo dục Trí tuệ nhân tạo từ năm học 2026-2027.
     
     Nhiệm vụ: Phân tích kế hoạch bài dạy (KHBD) môn ${subject} khối ${grade} dưới đây và bổ sung Tích hợp NNLS (Năng lực số) và Giáo dục AI (Trí tuệ nhân tạo) một cách logic, khả thi, bám sát các văn bản quy định.
     
-    Hãy tuân thủ các chỉ dẫn tích hợp giáo dục AI cốt lõi:
-    - Không làm thay đổi mục tiêu môn học, không gây quá tải cho học sinh, không dạy lập trình hay thuật toán chuyên sâu (không lạm dụng kỹ thuật) mà tập trung vào "Dạy cách đánh giá - kiểm soát - sử dụng AI", thể hiện rõ giáo dục AI theo hướng đạo đức và trách nhiệm.
+    Hãy tuân thủ các chỉ dẫn tích hợp giáo dục AI cốt lõi theo "ĐỊNH HƯỚNG TÍCH HỢP AI TRONG KHBD THEO TỪNG NHÓM MÔN HỌC":
+    - Đối với môn học khác ngoài môn Tin học (như môn ${subject} ở đây): Tuyệt đối không dạy kiến thức kỹ thuật chuyên sâu hay lập trình AI. Sử dụng AI như một công cụ hỗ trợ để học sinh tìm kiếm thông tin, tóm tắt tư liệu, lập dàn ý, dịch thuật hoặc mô phỏng.
+    - Tập trung vào các hoạt động tư duy bậc cao: Hướng dẫn học sinh phản biện, tranh biện, thảo luận về các vấn đề đạo đức (đạo văn, thiên kiến dữ liệu, quyền riêng tư) và đánh giá độ tin cậy của thông tin do AI cung cấp nhằm tránh phụ thuộc hoàn toàn vào công nghệ.
+    - Trọng tâm năng lực phát triển: NLa (Tư duy lấy con người làm trung tâm) và NLb (Đạo đức AI).
     
     Các bổ sung cụ thể theo Công văn số 5512/BGDĐT-GDTrH:
     1. Trong "I. MỤC TIÊU": 
@@ -128,18 +128,17 @@ export async function integrateNLS(content: string, subject: string, grade: stri
        - Sửa đổi hoặc bổ sung mục "3. Năng lực số và Trí tuệ nhân tạo (AI)":
          + Liệt kê rõ các năng lực số miền sáu (6.1. Tư duy lấy con người làm trung tâm, 6.2. Đạo đức AI, 6.3. Sư phạm AI, 6.4. AI cho phát triển chuyên môn) theo chuẩn chỉ báo [Mã miền].[Mã nhánh].${NLS_FRAMEWORK.levelCode}[a/b/c...]. Ví dụ: 6.1.${NLS_FRAMEWORK.levelCode}a, 6.2.${NLS_FRAMEWORK.levelCode}b.
          + BẮT BUỘC MÃ HÓA NĂNG LỰC AI THÀNH PHẦN CHI TIẾT theo Quyết định số 2422/QĐ-BGDĐT và Công văn số 5588/BGDĐT-GDPT: bằng cách ghép [Khối_lớp].[Mã_chủ_đề].[Chỉ_số] (Ví dụ: 10.A1.1, 11.C1.1, 12.C4.MR1, 12.A2.1). QUY TẮC PHẢI TUÂN THỦ: Toàn bộ các mã năng lực số và năng lực học liệu AI (ví dụ: 6.1.NC1a, 10.A1.1...) luôn phải được viết dưới dạng văn bản thường bình thường hoàn toàn, tuyệt đối không được bao bọc trong và không sử dụng các dấu nháy ngược khép kín (\`...\`) hay định dạng code block inline.
-           * Trong đó:
-             - Mã khối lớp: 10, 11 hoặc 12 (ví dụ: học sinh lớp 11 dùng mã 11).
-             - Mạch kiến thức/chủ đề cốt lõi tương ứng: A - Nhận thức, B - Đạo đức & Tương tác, C - Dữ liệu & Logic, D - Ứng dụng giải quyết vấn đề, E - Sáng tạo nội dung (ví dụ: A1, B2, C3, C4, D1, E2).
-             - Biểu hiện/Chỉ số chi tiết: Kí hiệu số hoặc ký hiệu nâng cao (1, 2, MR1...).
-             - Biểu hiện/Chỉ số chi tiết: Kí hiệu số hoặc ký hiệu nâng cao (1, 2, MR1...).
+           * Bên cạnh mục tiêu phẩm chất, năng lực môn học, phải xác định cụ thể yêu cầu cần đạt về AI mà học sinh sẽ hình thành trong tiết học:
+             - Về Nhận thức (NLa): Học sinh nhận ra vai trò, giới hạn hoặc rủi ro của AI trong nội dung bài học.
+             - Về Trách nhiệm (NLb): Ý thức, hành vi trung thực học thuật, không sao chép máy móc sản phẩm do AI tạo ra.
              - Giải thích chi tiết mã chỉ báo năng lực AI: Ví dụ "11.C1.1" chỉ định chỉ số 1 nằm trong Chủ đề C1 (Dữ liệu & Logic) dành cho học sinh lớp 11; "10.A1.1" chỉ định chỉ số 1 của Chủ đề A1 dành cho lớp 10; "12.C4.MR1" chỉ định chỉ số nâng cao MR1 của Chủ đề C4 dành cho học sinh lớp 12.
              - Việc ghi mã chi tiết đến từng chữ cái giúp giáo viên xác định chính xác mục tiêu giảng dạy, tổ chức thực hành, dự án AI và đánh giá học sinh sát sao nhất.
     2. Trong "II. THIẾT BỊ DẠY HỌC VÀ HỌC LIỆU":
        - Bổ sung thêm tiểu mục “Công cụ số và AI”. Trong phần này phải trình bày rõ:
-         * Phương án triển khai: Học sinh sẽ thực hành sử dụng công cụ AI trực tiếp hay chỉ thảo luận thông qua các tình huống giả định (case study).
-         * Học liệu/công cụ cụ thể: Liệt kê rõ tên phần mềm, nền tảng ứng dụng AI sẽ sử dụng (ví dụ: Google AI Studio, Gemini, Canva AI, Teachable Machine...), hoặc các bài báo, video phân tích, ảnh chụp màn hình, tình huống giả định đã chuẩn bị sẵn.
+         * Phương án triển khai: Nhà trường sử dụng tình huống giả định (nếu không có máy tính/Internet) hay cho học sinh tương tác trực tiếp với công cụ AI.
+         * Học liệu/công cụ cụ thể: Viết rõ tên phần mềm, nền tảng ứng dụng AI miễn phí, trực quan, không yêu cầu tài khoản trả phí (ví dụ: Google AI Studio, Gemini, Canva AI, Teachable Machine, NotebookLM...), hoặc các bài báo, video phân tích, ảnh chụp màn hình, tình huống giả định đã chuẩn bị sẵn.
     3. Trong "III. TIẾN TRÌNH DẠY HỌC":
+       - Đảm bảo các hoạt động học có nội dung AI được thiết kế linh hoạt, xuất hiện tự nhiên tại các hoạt động (Khởi động, Hình thành kiến thức, Luyện tập hoặc Vận dụng). Tiến trình thực hiện phải bám sát chu trình chuẩn: Học sinh tự làm → AI hỗ trợ → Học sinh đối chiếu, phản biện và đánh giá. Giáo viên đóng vai trò điều phối, đặt các câu hỏi dẫn dắt gợi mở, hướng dẫn học sinh kỹ năng đặt câu lệnh (prompt) hiệu quả và giám sát để học sinh không sử dụng AI thay thế hoàn toàn cho tư duy độc lập.
        - PHÂN BỔ TIẾT HỌC CHI TIẾT: Đầu mục này chỉ nêu tên và chủ đề chung của các tiết học trên dòng riêng (ví dụ: * TIẾT 1: KHỞI ĐỘNG CHUNG CHO CỤM BÀI HỌC. ĐỌC - HIỂU VĂN BẢN XUÂN TÓC ĐỎ CỨU QUỐC; * TIẾT 2: ĐỌC - HIỂU VĂN BẢN XUÂN TÓC ĐỎ CỨU QUỐC). TUYỆT ĐỐI KHÔNG được ghi nội dung mô tả chi tiết trong ngoặc đơn ở phần phân bổ này (ví dụ: KHÔNG ghi "... (BỐI CẢNH LỊCH SỬ, TÁC GIẢ...)") và KHÔNG liệt kê chi tiết các Hoạt động 1, Hoạt động 2, Nội dung 1, Nội dung 2 hay các tiểu mục 2.1, 2.2,... trong phần phân bổ tiết học này.
         - Mỗi tiết học khi đi vào chi tiết bên dưới vẫn bắt đầu bằng tiêu đề dòng riêng: **TIẾT X: [NỘI DUNG KIẾN THỨC BÀI HỌC]** (hãy viết hoa toàn bộ tên bài học và in đậm, tuyệt đối không được ghi thêm các chú thích kiểu "(căn giữa, viết hoa, in đậm)" hay "(viết hoa, in đậm, căn giữa)" vào văn bản). - QUY TẮC BẮT BUỘC CHO NHIỀU TIẾT: Đối với bài dạy nhiều tiết (ví dụ: bài học 2, 3, 4 tiết, hay thậm chí 11, 12, 15 tiết...), bạn phải thực hiện thiết kế chi tiết tất cả các hoạt động cho từng tiết. TUYỆT ĐỐI không tóm tắt sơ sài hay gom cụm các tiết sau. TẤT CẢ các hoạt động học ở tất cả các tiết (từ Tiết 1 đến Tiết cuối cùng) đều PHẢI ĐƯỢC THIẾT KẾ ĐẦY ĐỦ VÀ CHI TIẾT THEO CẤU TRÚC 4 PHẦN (a, b, c, d) DƯỚI ĐÂY.
         - CẤM TÓM TẮT HOẶC VIẾT GHI CHÚ LƯỢC BỚT: NGHIÊM CẤM TUYỆT ĐỐI việc viết các câu lược trích hoặc để ghi chú trống bằng tiếng Việt như: "(Do giới hạn dung lượng, tôi xin lược trích...)", "(Lưu ý: Giáo viên cần tự điều chỉnh thời lượng...)", hoặc bất kỳ câu nào khuyên giáo viên tự điền. Bạn BẮT BUỘC phải viết chi tiết đầy đủ 100% tất cả các tiết học từ Tiết 1 đến Tiết cuối cùng.
@@ -254,14 +253,16 @@ export async function generateLessonPlan(lessonName: string, periods: number, su
     throw new Error("API Key không tồn tại. Vui lòng kiểm tra cấu hình.");
   }
 
-  const isLiterature = subject === 'Ngữ văn';
-  const assessmentPromptPart = isLiterature ? "" : `
-    IV. KẾ HOẠCH ĐÁNH GIÁ (nếu có)
-    - Xây dựng tiêu chí đánh giá tích hợp AI: kỹ năng tương tác prompt, kiểm chứng dữ liệu, phản biện thiên kiến, thái độ chịu trách nhiệm và trích dẫn trung thực.
+  const assessmentPromptPart = `
+    IV. KẾ HOẠCH ĐÁNH GIÁ
+    - Đánh giá năng lực thực chất (Process-based assessment): Tập trung đánh giá năng lực tư duy của học sinh thông qua:
+      * Kỹ năng tương tác: Cách đặt câu hỏi, tinh chỉnh prompt hiệu quả cho AI (như cấu trúc Role-Context-Constraint).
+      * Kỹ năng kiểm chứng: Khả năng phát hiện lỗi sai, thiên kiến hoặc ảo giác thông tin (hallucination) của AI bằng cách đối chiếu với nguồn dữ liệu gốc hoặc SGK chính thống.
+      * Sử dụng có trách nhiệm: Ý thức tự giác khai báo mức độ sử dụng AI, trích dẫn nguồn học liệu hợp pháp và không đạo văn (sử dụng tiêu chuẩn trích dẫn AI Attribution Standards).
   `;
-  const luyenTapHeader = isLiterature ? "IV. HOẠT ĐỘNG LUYỆN TẬP" : "V. HOẠT ĐỘNG LUYỆN TẬP";
-  const vanDungHeader = isLiterature ? "V. HOẠT ĐỘNG VẬN DỤNG" : "VI. HOẠT ĐỘNG VẬN DỤNG";
-  const phieuHocTapHeader = isLiterature ? "VI. CÁC PHIẾU HỌC TẬP" : "VII. CÁC PHIẾU HỌC TẬP";
+  const luyenTapHeader = "V. HOẠT ĐỘNG LUYỆN TẬP";
+  const vanDungHeader = "VI. HOẠT ĐỘNG VẬN DỤNG";
+  const phieuHocTapHeader = "VII. CÁC PHIẾU HỌC TẬP";
 
   const isDoc = lessonName.toLowerCase().includes('đọc:') || (lessonName.toLowerCase().includes('đọc') && !lessonName.toLowerCase().includes('thực hành đọc'));
   const isTiengViet = lessonName.toLowerCase().includes('tiếng việt');
@@ -376,7 +377,11 @@ export async function generateLessonPlan(lessonName: string, periods: number, su
     ${skillSpecificPrompt}
     
     LƯU Ý ĐẶC BIỆT KHI LỒNG GHÉP NĂNG LỰC SỐ VÀ GIÁO DỤC AI:
-    - AI được tích hợp một cách linh hoạt trong tiến trình dạy học thích hợp, không tách thành phần riêng. Phát huy giáo dục AI theo hướng "Đánh giá - kiểm soát - sử dụng AI" và đạo đức - trách nhiệm của học sinh. Không làm thay đổi mục tiêu cốt lõi của môn học và không dạy lập trình/thuật toán phức tạp gây quá tải cho học sinh.
+    - AI được tích hợp một cách linh hoạt trong tiến trình dạy học thích hợp, không tách thành phần riêng. 
+    - Hãy tuân thủ các chỉ dẫn tích hợp giáo dục AI cốt lõi theo "ĐỊNH HƯỚNG TÍCH HỢP AI TRONG KHBD THEO TỪNG NHÓM MÔN HỌC":
+      * Đối với môn học khác ngoài môn Tin học (như môn ${subject} ở đây): Tuyệt đối không dạy kiến thức kỹ thuật chuyên sâu hay lập trình AI. Sử dụng AI như một công cụ hỗ trợ để học sinh tìm kiếm thông tin, tóm tắt tư liệu, lập dàn ý, dịch thuật hoặc mô phỏng.
+      * Tập trung vào các hoạt động tư duy bậc cao: Hướng dẫn học sinh phản biện, tranh biện, thảo luận về các vấn đề đạo đức (đạo văn, thiên kiến dữ liệu, quyền riêng tư) và đánh giá độ tin cậy của thông tin do AI cung cấp nhằm tránh phụ thuộc hoàn toàn vào công nghệ.
+      * Trọng tâm năng lực phát triển: NLa (Tư duy lấy con người làm trung tâm) và NLb (Đạo đức AI).
     - ĐẢM BẢO THỜI LƯỢNG: Thiết kế nội dung chi tiết phủ kín ${periods} tiết học (45 phút/tiết).
     - Ôn tập/Luyện tập: Nếu tên bài là "Ôn tập chương X", hãy tập trung hệ thống hóa kiến thức dùng sơ đồ tư duy và thiết lập hệ thống bài tập phong phú (phần IV phiếu học tập có tối thiểu 15 câu trắc nghiệm và 5 bài tập tự luận).
     - Nội dung bám sát Chương trình GDPT 2018 và SGK Bộ sách Kết nối tri thức.
@@ -388,21 +393,20 @@ export async function generateLessonPlan(lessonName: string, periods: number, su
     3. Năng lực số và Trí tuệ nhân tạo (AI):
        - Liệt kê các mã chỉ báo NLS chuẩn [Mã miền].[Mã nhánh].${NLS_FRAMEWORK.levelCode}[a/b/c...]. Ví dụ: 6.1.${NLS_FRAMEWORK.levelCode}a, 6.2.${NLS_FRAMEWORK.levelCode}b.
        - BẮT BUỘC MÃ HÓA NĂNG LỰC AI THÀNH PHẦN CHI TIẾT theo Quyết định số 2422/QĐ-BGDĐT và Công văn số 5588/BGDĐT-GDPT bằng cách ghép: [Khối_lớp].[Mã_chủ_đề][Biểu_hiện] (Ví dụ: 10.A1.1, 11.C1.1, 12.C4.MR1, 12.A2.1). QUY TẮC BẮT BUỘC: Toàn bộ các mã năng lực số và năng lực học liệu AI (ví dụ: 6.1.NC1a, 10.A1.1...) luôn phải được viết dưới dạng văn bản thường bình thường hoàn toàn, tuyệt đối không được bao bọc trong và không sử dụng các dấu nháy ngược khép kín (\`...\`) hay định dạng khối mã code block inline.
-         * Trong đó:
-           - Mã khối lớp: 10, 11 hoặc 12 (ví dụ: học sinh lớp 11 dùng mã 11).
-           - Mạch kiến thức/chủ đề cốt lõi tương ứng: A - Nhận thức, B - Đạo đức & Tương tác, C - Dữ liệu & Logic, D - Ứng dụng giải quyết vấn đề, E - Sáng tạo nội dung (ví dụ: A1, B2, C3, C4, D1, E2).
-           - Biểu hiện/Chỉ số chi tiết: Kí hiệu số hoặc ký hiệu nâng cao (1, 2, MR1...).
-           - Biểu hiện/Chỉ số chi tiết: Kí hiệu số hoặc ký hiệu nâng cao (1, 2, MR1...).
-           - Giải thích chi tiết mã chỉ báo năng lực AI: Ví dụ "11.C1.1" chỉ định chỉ số 1 nằm trong Chủ đề C1 (Dữ liệu & Logic) dành cho học sinh lớp 11; "10.A1.1" chỉ định chỉ số 1 của Chủ đề A1 dành cho lớp 10; "12.C4.MR1" chỉ định chỉ số nâng cao MR1 của Chủ đề C4 dành cho học sinh lớp 12.
-           - Việc ghi chính xác mã đến từng chữ cái giúp giáo viên xác định chính xác mục tiêu giảng dạy, tổ chức thực hành, dự án AI và đánh giá học sinh sát sao nhất.
+         * Bên cạnh mục tiêu phẩm chất, năng lực môn học, phải xác định cụ thể yêu cầu cần đạt về AI mà học sinh sẽ hình thành trong tiết học:
+           - Về Nhận thức (NLa): Học sinh nhận ra vai trò, giới hạn hoặc rủi ro của AI trong nội dung bài học.
+           - Về Trách nhiệm (NLb): Ý thức, hành vi trung thực học thuật, không sao chép máy móc sản phẩm do AI tạo ra.
+         * Giải thích chi tiết mã chỉ báo năng lực AI: Ví dụ "11.C1.1" chỉ định chỉ số 1 nằm trong Chủ đề C1 (Dữ liệu & Logic) dành cho học sinh lớp 11; "10.A1.1" chỉ định chỉ số 1 của Chủ đề A1 dành cho lớp 10; "12.C4.MR1" chỉ định chỉ số nâng cao MR1 của Chủ đề C4 dành cho học sinh lớp 12.
+         * Việc ghi chính xác mã đến từng chữ cái giúp giáo viên xác định chính xác mục tiêu giảng dạy, tổ chức thực hành, dự án AI và đánh giá học sinh sát sao nhất.
     4. Phẩm chất (Yêu nước, Nhân ái, Chăm chỉ, Trung thực, Trách nhiệm)
     
     II. THIẾT BỊ DẠY HỌC VÀ HỌC LIỆU
     - Bổ sung mục “Công cụ số và AI”:
-      * Phương án triển khai: Cho học sinh thực hành sử dụng AI trực tiếp hay thảo luận qua tình huống giả định (case study).
-      * Học liệu/công cụ cụ thể: Viết rõ tên nền tảng (Gemini, Google AI Studio, Canva, Teachable Machine, PhET Simulations, Desmos, GeoGebra...) hoặc các tài liệu cụ thể như các tệp dữ liệu giả định, bài báo, video thảo luận, ảnh chụp thiết kế...
+      * Phương án triển khai: Nhà trường sử dụng tình huống giả định (nếu không có máy tính/Internet) hay cho học sinh tương tác trực tiếp với công cụ AI.
+      * Học liệu/công cụ cụ thể: Viết rõ tên nền tảng miễn phí, trực quan, không yêu cầu tài khoản trả phí (Gemini, Google AI Studio, Canva, Teachable Machine, NotebookLM...) hoặc các tài liệu cụ thể như các tệp dữ liệu giả định, bài báo, video thảo luận, ảnh chụp thiết kế...
     
     III. TIẾN TRÌNH DẠY HỌC
+    - Đảm bảo các hoạt động học có nội dung AI được thiết kế linh hoạt, xuất hiện tự nhiên tại các hoạt động (Khởi động, Hình thành kiến thức, Luyện tập hoặc Vận dụng). Tiến trình thực hiện phải bám sát chu trình chuẩn: Học sinh tự làm → AI hỗ trợ → Học sinh đối chiếu, phản biện và đánh giá. Giáo viên đóng vai trò điều phối, đặt các câu hỏi dẫn dắt gợi mở, hướng dẫn học sinh kỹ năng đặt câu lệnh (prompt) hiệu quả và giám sát để học sinh không sử dụng AI thay thế hoàn toàn cho tư duy độc lập.
     - PHÂN BỔ TIẾT HỌC CHI TIẾT: Đầu mục này chỉ nêu tên các tiết học và chủ đề chung của các tiết đó một cách khái quát trên dòng riêng. TUYỆT ĐỐI KHÔNG được ghi nội dung mô tả chi tiết trong ngoặc đơn ở phần phân bổ này (ví dụ: KHÔNG ghi "... (BỐI CẢNH LỊCH SỬ - XÃ HỘI, TÁC GIẢ Vũ Trọng Phụng...)") và TUYỆT ĐỐI KHÔNG liệt kê chi tiết các Hoạt động 1, Hoạt động 2, Nội dung 1, Nội dung 2 hay các tiểu mục 2.1, 2.2,... ở phần phân bổ này để tránh làm rối mắt giáo viên (vì các hoạt động học cụ thể đã được triển khai chi tiết ở bên dưới).
       Ví dụ mẫu chuẩn:
       * TIẾT 1: KHỞI ĐỘNG CHUNG CHO CỤM BÀI HỌC. ĐỌC - HIỂU VĂN BẢN XUÂN TÓC ĐỎ CỨU QUỐC
